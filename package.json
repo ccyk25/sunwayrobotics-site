@@ -1,0 +1,9 @@
+{
+  "name": "sunwayrobotics-site",
+  "private": true,
+  "description": "Static site for Sunway Robotics Club, served from public/ by a Cloudflare Worker (see wrangler.jsonc).",
+  "scripts": {
+    "build": "echo \"Static site: nothing to build, public/ is deployed as-is\"",
+    "deploy": "wrangler deploy"
+  }
+}
