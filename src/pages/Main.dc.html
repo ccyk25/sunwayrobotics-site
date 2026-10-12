@@ -34,7 +34,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #7852
 /* background elements */
 @media (max-width: 900px){.ghost,.dial{display:none !important}}
 .herovid{object-fit:cover;object-position:50% 50%}
-.srow{display:flex;flex-direction:column;align-items:flex-start;gap:22px;margin-top:72px;padding-top:28px;border-top:1px solid #C6C2BB}.stiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%}.stile{height:96px;display:flex;align-items:center;justify-content:center;padding:6px 28px;box-sizing:border-box;border-left:1px solid #C6C2BB}.stile:first-child{border-left:0}.stile img{display:block;max-width:100%;max-height:100%;width:auto;height:auto}@media (max-width: 760px){.srow{margin-top:56px;gap:18px}.stile{height:64px;padding:4px 10px}}
+.srow{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:20px 48px;margin-top:64px;padding:26px 32px;background:#FFFFFF;border:1px solid #DCD8D0}.slab{font-size:14px;font-weight:500;color:#6B6862;white-space:nowrap}.stiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;gap:24px}.stile{height:72px;display:flex;align-items:center;justify-content:center}.stile img{display:block;max-width:100%;max-height:100%;width:auto;height:auto}@media (max-width: 760px){.srow{grid-template-columns:minmax(0,1fr);margin-top:48px;padding:20px 18px;gap:14px}.stiles{gap:14px}.stile{height:52px}}
 @media (max-width: 760px), (orientation: portrait){#top{height:auto !important;min-height:0 !important}#top .heroOut{position:relative !important;inset:auto !important}.herostage{flex:none !important}.herovid{height:auto !important;aspect-ratio:4 / 3;max-height:72vh}}
 @keyframes ilSwing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(9deg)}}@keyframes ilSwing2{0%,100%{transform:rotate(12deg)}50%{transform:rotate(-14deg)}}@keyframes ilNudge{0%,100%{transform:translate(0,0)}25%{transform:translate(4px,-4px)}75%{transform:translate(-4px,3px)}}@keyframes ilDrop{0%{transform:translateY(-128px)}100%{transform:translateY(0)}}@keyframes ilOrbit{to{transform:rotate(360deg)}}@keyframes ilPulse{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.5);opacity:1}}@keyframes ilRing{0%{transform:scale(1);opacity:.9}100%{transform:scale(2.6);opacity:0}}@keyframes ilRoll{0%,100%{transform:translateX(0)}50%{transform:translateX(84px)}}@keyframes ilEq{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}@keyframes ilBlink{0%,100%{opacity:.2}50%{opacity:1}}@keyframes ilConvey{to{transform:translateX(44px)}}@keyframes ilFlow{to{stroke-dashoffset:-20}}@keyframes ilFlow2{from{stroke-dashoffset:148}to{stroke-dashoffset:0}}.wrow .wimg svg{transition:transform .9s cubic-bezier(.2,.7,.2,1)}.wrow:hover .wimg svg{transform:scale(1.04)}@media (prefers-reduced-motion: reduce){.il *{animation:none !important}}
 @keyframes mqL{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -269,7 +269,7 @@ Sunway Robotics Club</a>
 </dl>
 </div>
 <div class="srow rv">
-<span class="lb dash" style="color: #6A44BE">Supported by</span>
+<span class="slab">Supported by</span>
 <div class="stiles">
 <div class="stile"><img src="/_blob/dfb53f4ab5afa546fd6f573e59ef4997" alt="Jeffrey Cheah Foundation" loading="lazy"></div>
 <div class="stile"><img src="/_blob/39a3ff91dfce64e9fa58a1ab731fce85" alt="Campus with a Conscience" loading="lazy"></div>
