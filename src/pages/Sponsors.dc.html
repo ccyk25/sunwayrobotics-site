@@ -2,306 +2,408 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Partner with SRC</title>
+<title>Partner with Sunway Robotics Club</title>
 <script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..600&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Instrument+Serif&amp;display=swap">
 <style>
-body{margin:0;background:#0A0A0C}
-a{color:#A98BF5}a:hover{color:#C9B6FF}
-a:focus-visible,button:focus-visible{outline:2px solid #A98BF5;outline-offset:3px}
-.mono{font-family:'Geist Mono',ui-monospace,monospace}
-.sk{stop-color:#24163F}.sv{stop-color:#A98BF5}
-.dk{background-color:#0A0A0C;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:80px 80px}
-.lt{background-color:#F4F3F6;background-image:linear-gradient(#E6E3EC 1px,transparent 1px),linear-gradient(90deg,#E6E3EC 1px,transparent 1px);background-size:80px 80px}
-.vi{background-color:#24163F;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:80px 80px}
-.phl{background-color:#E7E4EC;background-image:linear-gradient(to bottom right,transparent calc(50% - .5px),#D2CEDA,transparent calc(50% + .5px)),linear-gradient(to top right,transparent calc(50% - .5px),#D2CEDA,transparent calc(50% + .5px))}
-.ticks{background-image:repeating-linear-gradient(90deg,#3A3842 0 1px,transparent 1px 10px);height:8px}
-@media (max-width: 760px){.navlinks{display:none !important}.menubtn{display:inline-flex !important}}
-@media (min-width: 761px){.mnav{display:none !important}}
-.btn{transition:background-color .25s,color .25s,border-color .25s}
-.btn .arr{display:inline-block;transition:transform .3s ease}
-.btn:hover .arr{transform:translateX(5px)}
-.bv:hover{background-color:#5A3A9E !important}
-.bo:hover{border-color:#A98BF5 !important;color:#FFFFFF !important}
-.nl{transition:color .2s}.nl:hover{color:#FFFFFF !important}
-.card{transition:border-color .4s}
-.card:hover{border-color:#7852C1 !important}
-.card .zoom{transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+body{margin:0;background:#EEECE8}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #7852C1;outline-offset:3px}
+.lb{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase}
+.lb.dash::before{content:"";width:22px;height:2px;background:currentColor}
+.lb.pill{padding:5px 10px;border:1px solid currentColor;border-radius:999px;font-size:11px;justify-self:end;align-self:center}
+.m{font-family:'JetBrains Mono',ui-monospace,monospace;text-transform:lowercase}
+.mu{font-family:'JetBrains Mono',ui-monospace,monospace;text-transform:uppercase}
+.cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+@media (max-width: 760px){.navlinks{display:none !important}.menubtn{display:inline-flex !important}.hovimg{display:none !important}}
+
+/* links & buttons */
+.ul{background-image:linear-gradient(currentColor,currentColor);background-size:0% 1px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .35s ease}
+.ul:hover{background-size:100% 1px}
+.brw{transition:background-color .25s,color .25s}
+.brw:hover{background-color:#FFFFFF !important;color:#0B0B0C !important}
+.svc{position:relative;transition:padding-left .4s cubic-bezier(.2,.7,.2,1),color .3s}
+.svc .ar{position:absolute;left:0;top:22px;opacity:0;transform:translateX(-12px);transition:opacity .3s,transform .4s}
+.svc:hover{padding-left:48px;color:#6A44BE}
+
+/* background elements */
+@media (max-width: 900px){.ghost,.dial{display:none !important}}
+.herovid{object-fit:cover;object-position:50% 50%}
+.srow{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:20px 48px;margin-top:64px;padding:26px 32px;background:#FFFFFF;border:1px solid #DCD8D0}.slab{font-size:14px;font-weight:500;color:#6B6862;white-space:nowrap}.stiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;gap:24px}.stile{height:72px;display:flex;align-items:center;justify-content:center}.stile img{display:block;max-width:100%;max-height:100%;width:auto;height:auto}@media (max-width: 760px){.srow{grid-template-columns:minmax(0,1fr);margin-top:48px;padding:20px 18px;gap:14px}.stiles{gap:14px}.stile{height:52px}}
+@media (max-width: 760px), (orientation: portrait){#top{height:auto !important;min-height:0 !important}#top .heroOut{position:relative !important;inset:auto !important}.herostage{flex:none !important}.herovid{height:auto !important;aspect-ratio:4 / 3;max-height:72vh}}
+@keyframes ilSwing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(9deg)}}@keyframes ilSwing2{0%,100%{transform:rotate(12deg)}50%{transform:rotate(-14deg)}}@keyframes ilNudge{0%,100%{transform:translate(0,0)}25%{transform:translate(4px,-4px)}75%{transform:translate(-4px,3px)}}@keyframes ilDrop{0%{transform:translateY(-128px)}100%{transform:translateY(0)}}@keyframes ilOrbit{to{transform:rotate(360deg)}}@keyframes ilPulse{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.5);opacity:1}}@keyframes ilRing{0%{transform:scale(1);opacity:.9}100%{transform:scale(2.6);opacity:0}}@keyframes ilRoll{0%,100%{transform:translateX(0)}50%{transform:translateX(84px)}}@keyframes ilEq{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}@keyframes ilBlink{0%,100%{opacity:.2}50%{opacity:1}}@keyframes ilConvey{to{transform:translateX(44px)}}@keyframes ilFlow{to{stroke-dashoffset:-20}}@keyframes ilFlow2{from{stroke-dashoffset:148}to{stroke-dashoffset:0}}.wrow .wimg svg{transition:transform .9s cubic-bezier(.2,.7,.2,1)}.wrow:hover .wimg svg{transform:scale(1.04)}@media (prefers-reduced-motion: reduce){.il *{animation:none !important}}
+@keyframes mqL{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes mqR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.mqL{display:flex;width:max-content;animation:mqL 38s linear infinite}
+.mqR{display:flex;width:max-content;animation:mqR 44s linear infinite}
+.tk{display:inline-flex;align-items:center;gap:.45em;padding-right:.45em}
+.gl2{height:.62em;width:auto;flex:0 0 auto;display:block}
+.tk2{display:inline-block;padding-right:.4em;white-space:pre}
+.wrow{display:grid;grid-template-columns:auto minmax(0,1fr) clamp(96px,24vw,280px);gap:16px 28px;align-items:center;padding:26px 0;border-bottom:1px solid #0B0B0C}
+.wrow .wimg img{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.wrow:hover .wimg img{transform:scale(1.07)}
+.wrow h3{transition:color .25s}
+.wrow:hover h3{color:#6A44BE}
+@media (max-width: 600px){.wrow{grid-template-columns:auto minmax(0,1fr);}.wrow .wimg{grid-column:1 / -1;order:-1}}
+.paper{background-color:#EEECE8;background-image:linear-gradient(rgba(11,11,12,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(11,11,12,.04) 1px,transparent 1px),radial-gradient(circle,rgba(106,68,190,.3) 1.5px,transparent 2.2px);background-size:120px 120px,120px 120px,120px 120px;background-position:0 0,0 0,60px 60px}
+.bgl{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(50px);animation:drift 20s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(90px,-70px) scale(1.18)}}
+@keyframes rot{from{transform:rotate(-40deg)}to{transform:rotate(140deg)}}
+@keyframes ghostUp{from{transform:translateY(80px)}to{transform:translateY(-80px)}}
+.svc:hover .ar{opacity:1;transform:translateX(0)}
+.svc .hovimg{position:absolute;right:26%;top:50%;width:190px;aspect-ratio:4/5;object-fit:cover;opacity:0;transform:translateY(-50%) scale(.85) rotate(-4deg);transition:opacity .35s,transform .5s cubic-bezier(.2,.7,.2,1);pointer-events:none;z-index:2;box-shadow:0 30px 60px -20px rgba(0,0,0,.45)}
+.svc:hover .hovimg{opacity:1;transform:translateY(-50%) scale(1) rotate(3deg)}
+.card .zoom{transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
 .card:hover .zoom{transform:scale(1.04)}
-.tick li{position:relative;padding:10px 0 10px 22px;border-top:1px solid rgba(255,255,255,.14)}
-.tick li::before{content:"";position:absolute;left:0;top:19px;width:7px;height:7px;background:#A98BF5}
-.tickd li{border-top-color:#CFCAD8}
-.tickd li::before{background:#5A3A9E}
-@keyframes rv{from{opacity:0;transform:translateY(40px)}}
-@keyframes wipe{from{clip-path:inset(0 0 100% 0);transform:translateY(30%)}}
+.card .ttl{transition:color .25s}
+.card:hover .ttl{color:#C3AEFA}
+.track{--cw:min(460px, calc(100vw - 72px))}
+.hs{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:#6A44BE #1E1E22}
+.hs::-webkit-scrollbar{height:4px}
+.hs::-webkit-scrollbar-track{background:#1E1E22}
+.hs::-webkit-scrollbar-thumb{background:#6A44BE}
+.hs > article{scroll-snap-align:start}
+.show .ph{position:relative;aspect-ratio:4 / 3;overflow:hidden;background:#17171A;border-radius:4px}
+.show .etag{margin-top:20px;font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#A98BF5}
+.show .ttl{margin:8px 0 10px;font-weight:500;font-size:24px;letter-spacing:-0.015em;line-height:1.2;color:#FFFFFF}
+.show .eds{margin:0;font-size:15px;line-height:1.6;color:#A9A6AE}
+.show .eyb{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#A98BF5;margin-bottom:16px}
+.show .eyb::before{content:"";width:22px;height:2px;background:#A98BF5}
+.arrs{display:flex;gap:10px}
+.arr{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;border:1px solid #3A3A40;background:transparent;color:#FFFFFF;cursor:pointer;transition:background .2s,border-color .2s}
+.arr:hover{background:#6A44BE;border-color:#6A44BE}
+@media (max-width: 760px){.arrs{display:none}.show{padding:84px 0 96px !important}}
+
+/* ambient */
+@keyframes blink{50%{opacity:.15}}
+.blink{animation:blink 1.2s steps(1) infinite}
+
+/* scroll-driven motion (content stays visible where unsupported) */
+@keyframes rv{from{opacity:0;transform:translateY(48px)}}
+@keyframes wup{from{opacity:0;transform:translateY(100%) rotate(4deg)}}
 @keyframes growx{from{transform:scaleX(0)}}
+@keyframes heroOut{to{transform:scale(.9);opacity:.25;border-radius:28px}}
+@keyframes clipIn{from{clip-path:inset(14% 10% 14% 10%)}to{clip-path:inset(0 0 0 0)}}
+@keyframes par{from{transform:translateY(-14%) scale(1.18)}to{transform:translateY(14%) scale(1.18)}}
+@keyframes zoomOut{from{transform:scale(1.3)}to{transform:scale(1)}}
+@keyframes slideL{from{transform:translateX(5%)}to{transform:translateX(-45%)}}
+@keyframes slideR{from{transform:translateX(-45%)}to{transform:translateX(5%)}}
+@keyframes fillw{from{color:rgba(255,255,255,.22)}to{color:#FFFFFF}}
+@keyframes cardIn{from{opacity:0;transform:translateX(120px)}}
 @supports (animation-timeline: view()){
-.rv{animation:rv linear both;animation-timeline:view();animation-range:entry 0% cover 25%}
-.rv2{animation:rv linear both;animation-timeline:view();animation-range:entry 10% cover 33%}
-.rv3{animation:rv linear both;animation-timeline:view();animation-range:entry 20% cover 41%}
-.wipe{animation:wipe linear both;animation-timeline:view();animation-range:entry 5% cover 28%}
+.rv{animation:rv linear both;animation-timeline:view();animation-range:entry 0% cover 24%}
+.rv2{animation:rv linear both;animation-timeline:view();animation-range:entry 10% cover 32%}
+.rv3{animation:rv linear both;animation-timeline:view();animation-range:entry 20% cover 40%}
+.w1,.w2,.w3,.w4,.w5{display:inline-block;animation:wup linear both;animation-timeline:view()}
+.w1{animation-range:entry 0% entry 60%}.w2{animation-range:entry 10% entry 70%}.w3{animation-range:entry 20% entry 80%}.w4{animation-range:entry 30% entry 90%}.w5{animation-range:entry 40% entry 100%}
 .fx{transform-origin:left;animation:growx linear both;animation-timeline:view();animation-range:entry 20% cover 50%}
+.heroOut{transform-origin:50% 0;animation:heroOut linear both;animation-timeline:view();animation-range:exit 0% exit 90%}
+.clip{animation:clipIn linear both;animation-timeline:view();animation-range:entry 0% cover 45%}
+.par{animation:par linear both;animation-timeline:view()}
+.zo{animation:zoomOut linear both;animation-timeline:view();animation-range:entry 0% cover 60%}
+.slideL{animation:slideL linear both;animation-timeline:view()}
+.slideR{animation:slideR linear both;animation-timeline:view()}
+.f1,.f2,.f3{animation:fillw linear both;animation-timeline:view()}
+.f1{animation-range:entry 30% cover 42%}.f2{animation-range:cover 38% cover 50%}.f3{animation-range:cover 46% cover 58%}
+.cin{animation:cardIn linear both;animation-timeline:view();animation-range:entry 0% cover 30%}
 .prog{transform-origin:left;animation:growx linear both;animation-timeline:scroll(root)}
+.rot{animation:rot linear both;animation-timeline:view()}
+.gup{animation:ghostUp linear both;animation-timeline:view()}
 }
+
+/* hero stand-in: logo assembly */
+.sk{stop-color:#2A1A4F}.sv{stop-color:#A98BF5}
+.gl{fill:none;stroke:#141416;stroke-width:1}
+.floor{stroke:#2E2E33;stroke-width:1}
+.pad{fill:#1A1A1E}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;fill:#77757F}
+.mframe{fill:none;stroke:#A98BF5;stroke-width:2}
+.wmk{font-family:'Instrument Serif',Georgia,serif;font-size:88px;fill:#FFFFFF}
+.lk1,.lk2,.lk3,.ped,.ped2{fill:#1C1C21;stroke:#4A4852;stroke-width:1}
+.hub{fill:#A98BF5}
+.jt{fill:#0B0B0C;stroke:#A98BF5;stroke-width:1.5}
+.cup{fill:#A98BF5}
+@keyframes la1{0%{transform:rotate(-114.62deg)}6%{transform:rotate(-114.62deg)}11%{transform:rotate(-82.18deg)}14%{transform:rotate(-55.01deg)}16%{transform:rotate(-55.01deg)}20%{transform:rotate(-87.22deg)}27%{transform:rotate(-84.4deg)}31%{transform:rotate(-75.53deg)}33%{transform:rotate(-75.53deg)}36%{transform:rotate(-78.28deg)}42%{transform:rotate(-68.41deg)}45%{transform:rotate(-48.79deg)}47%{transform:rotate(-48.79deg)}51%{transform:rotate(-72.84deg)}57%{transform:rotate(-92.93deg)}61%{transform:rotate(-76.27deg)}63%{transform:rotate(-76.27deg)}66%{transform:rotate(-97.48deg)}70%{transform:rotate(-114.62deg)}100%{transform:rotate(-114.62deg)}}
+@keyframes la2{0%{transform:rotate(125.48deg)}6%{transform:rotate(125.48deg)}11%{transform:rotate(141.66deg)}14%{transform:rotate(142.77deg)}16%{transform:rotate(142.77deg)}20%{transform:rotate(140.23deg)}27%{transform:rotate(69.62deg)}31%{transform:rotate(64.72deg)}33%{transform:rotate(64.72deg)}36%{transform:rotate(55.98deg)}42%{transform:rotate(122.91deg)}45%{transform:rotate(123.18deg)}47%{transform:rotate(123.18deg)}51%{transform:rotate(121.63deg)}57%{transform:rotate(116.65deg)}61%{transform:rotate(98.17deg)}63%{transform:rotate(98.17deg)}66%{transform:rotate(113.54deg)}70%{transform:rotate(125.48deg)}100%{transform:rotate(125.48deg)}}
+@keyframes la3{0%{transform:rotate(79.15deg)}6%{transform:rotate(79.15deg)}11%{transform:rotate(30.52deg)}14%{transform:rotate(2.25deg)}16%{transform:rotate(2.25deg)}20%{transform:rotate(36.99deg)}27%{transform:rotate(104.78deg)}31%{transform:rotate(100.81deg)}33%{transform:rotate(100.81deg)}36%{transform:rotate(112.3deg)}42%{transform:rotate(35.5deg)}45%{transform:rotate(15.61deg)}47%{transform:rotate(15.61deg)}51%{transform:rotate(41.21deg)}57%{transform:rotate(66.29deg)}61%{transform:rotate(68.1deg)}63%{transform:rotate(68.1deg)}66%{transform:rotate(73.94deg)}70%{transform:rotate(79.15deg)}100%{transform:rotate(79.15deg)}}
+@keyframes ra1{0%{transform:rotate(-65.38deg)}6%{transform:rotate(-65.38deg)}15%{transform:rotate(-98.2deg)}18%{transform:rotate(-120.9deg)}20%{transform:rotate(-120.9deg)}24%{transform:rotate(-93.17deg)}32%{transform:rotate(-82.86deg)}36%{transform:rotate(-100.05deg)}38%{transform:rotate(-100.05deg)}42%{transform:rotate(-76.51deg)}50%{transform:rotate(-65.38deg)}70%{transform:rotate(-65.38deg)}100%{transform:rotate(-65.38deg)}}
+@keyframes ra2{0%{transform:rotate(-125.48deg)}6%{transform:rotate(-125.48deg)}15%{transform:rotate(-134.79deg)}18%{transform:rotate(-137.3deg)}20%{transform:rotate(-137.3deg)}24%{transform:rotate(-132.76deg)}32%{transform:rotate(-106.05deg)}36%{transform:rotate(-88.38deg)}38%{transform:rotate(-88.38deg)}42%{transform:rotate(-103.84deg)}50%{transform:rotate(-125.48deg)}70%{transform:rotate(-125.48deg)}100%{transform:rotate(-125.48deg)}}
+@keyframes ra3{0%{transform:rotate(280.85deg)}6%{transform:rotate(280.85deg)}15%{transform:rotate(322.99deg)}18%{transform:rotate(348.2deg)}20%{transform:rotate(348.2deg)}24%{transform:rotate(315.94deg)}32%{transform:rotate(278.9deg)}36%{transform:rotate(278.43deg)}38%{transform:rotate(278.43deg)}42%{transform:rotate(270.35deg)}50%{transform:rotate(280.85deg)}70%{transform:rotate(280.85deg)}100%{transform:rotate(280.85deg)}}
+@keyframes wsq{0%{opacity:0}1%{opacity:0}5%{opacity:1}14.9%{opacity:1}15%{opacity:0}100%{opacity:0}}
+@keyframes csq{0%{opacity:0}14.9%{opacity:0}15%{opacity:1}31.9%{opacity:1}32%{opacity:0}100%{opacity:0}}
+@keyframes psq{0%{opacity:0}31.9%{opacity:0}32%{opacity:1}96%{opacity:1}100%{opacity:0}}
+@keyframes wllt{0%{opacity:0}1%{opacity:0}5%{opacity:1}45.9%{opacity:1}46%{opacity:0}100%{opacity:0}}
+@keyframes cllt{0%{opacity:0}45.9%{opacity:0}46%{opacity:1}61.9%{opacity:1}62%{opacity:0}100%{opacity:0}}
+@keyframes pllt{0%{opacity:0}61.9%{opacity:0}62%{opacity:1}96%{opacity:1}100%{opacity:0}}
+@keyframes wurt{0%{opacity:0}1%{opacity:0}5%{opacity:1}18.9%{opacity:1}19%{opacity:0}100%{opacity:0}}
+@keyframes curt{0%{opacity:0}18.9%{opacity:0}19%{opacity:1}36.9%{opacity:1}37%{opacity:0}100%{opacity:0}}
+@keyframes purt{0%{opacity:0}36.9%{opacity:0}37%{opacity:1}96%{opacity:1}100%{opacity:0}}
+@keyframes frame{0%{stroke-dashoffset:902;opacity:1}2%{stroke-dashoffset:902;opacity:1}9%{stroke-dashoffset:0;opacity:1}96%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+@keyframes shift{0%{transform:translateX(0px)}76%{transform:translateX(0px)}82%{transform:translateX(-185px)}100%{transform:translateX(-185px)}}
+@keyframes wm1{0%{opacity:0;transform:translateY(14px)}81%{opacity:0;transform:translateY(14px)}85%{opacity:1;transform:translateY(0px)}96%{opacity:1;transform:translateY(0px)}100%{opacity:0;transform:translateY(0px)}}
+@keyframes wm2{0%{opacity:0;transform:translateY(14px)}83%{opacity:0;transform:translateY(14px)}87%{opacity:1;transform:translateY(0px)}96%{opacity:1;transform:translateY(0px)}100%{opacity:0;transform:translateY(0px)}}
+@keyframes wm3{0%{opacity:0;transform:translateY(14px)}85%{opacity:0;transform:translateY(14px)}89%{opacity:1;transform:translateY(0px)}96%{opacity:1;transform:translateY(0px)}100%{opacity:0;transform:translateY(0px)}}
+@keyframes laslide{0%{transform:translateX(-480px)}5%{transform:translateX(0px)}70%{transform:translateX(0px)}76%{transform:translateX(-480px)}100%{transform:translateX(-480px)}}
+@keyframes raslide{0%{transform:translateX(480px)}5%{transform:translateX(0px)}70%{transform:translateX(0px)}76%{transform:translateX(480px)}100%{transform:translateX(480px)}}
+.stage g{transform-box:view-box;transform-origin:0 0}
+.la1{animation:la1 16s ease-in-out infinite;transform:rotate(-114.62deg)}
+.la2{animation:la2 16s ease-in-out infinite;transform:rotate(125.48deg)}
+.la3{animation:la3 16s ease-in-out infinite;transform:rotate(79.15deg)}
+.ra1{animation:ra1 16s ease-in-out infinite;transform:rotate(-65.38deg)}
+.ra2{animation:ra2 16s ease-in-out infinite;transform:rotate(-125.48deg)}
+.ra3{animation:ra3 16s ease-in-out infinite;transform:rotate(280.85deg)}
+.wsq{animation:wsq 16s linear infinite;opacity:0}
+.csq{animation:csq 16s linear infinite;opacity:0}
+.psq{animation:psq 16s linear infinite;opacity:1}
+.wllt{animation:wllt 16s linear infinite;opacity:0}
+.cllt{animation:cllt 16s linear infinite;opacity:0}
+.pllt{animation:pllt 16s linear infinite;opacity:1}
+.wurt{animation:wurt 16s linear infinite;opacity:0}
+.curt{animation:curt 16s linear infinite;opacity:0}
+.purt{animation:purt 16s linear infinite;opacity:1}
+.mframe{animation:frame 16s linear infinite;stroke-dasharray:902}
+.mshift{animation:shift 16s ease-in-out infinite;transform:translateX(-185px)}
+.wm1{animation:wm1 16s ease-in-out infinite;opacity:1}
+.wm2{animation:wm2 16s ease-in-out infinite;opacity:1}
+.wm3{animation:wm3 16s ease-in-out infinite;opacity:1}
+.laslide{animation:laslide 16s ease-in-out infinite;transform:translateX(-480px)}
+.raslide{animation:raslide 16s ease-in-out infinite;transform:translateX(480px)}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
+
+.pp .wrap{max-width:1360px;margin:0 auto;padding:0 24px}
+.pp h2{margin:0;font-weight:500;font-size:clamp(36px,4.6vw,64px);letter-spacing:-0.03em;line-height:1.02}
+.pp .hero{position:relative;overflow:hidden;background:#0B0B0C;color:#FFFFFF}
+.pp .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.pp .hero .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,11,12,0.93) 0%,rgba(11,11,12,0.8) 45%,rgba(11,11,12,0.45) 100%),linear-gradient(180deg,rgba(11,11,12,0) 55%,rgba(11,11,12,0.95) 100%)}
+.pp .hero .wrap{position:relative;z-index:1;padding-top:110px;padding-bottom:56px}
+.pp h1{margin:20px 0 0;font-weight:500;font-size:clamp(46px,7.2vw,112px);line-height:.95;letter-spacing:-0.035em;max-width:13ch}
+.pp h1 span{color:#A98BF5}
+.pp .lede{margin:28px 0 0;max-width:600px;font-size:clamp(17px,1.5vw,20px);line-height:1.6;color:#C2C0CA}
+.pp .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.pp .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;font-size:15px;font-weight:500;text-decoration:none;transition:background-color .2s,color .2s,border-color .2s}
+.pp .btn.pri{background:#7852C1;color:#FFFFFF;border:1px solid #7852C1}.pp .btn.pri:hover{background:#6A44BE}
+.pp .btn.sec{border:1px solid #FFFFFF;color:#FFFFFF}.pp .btn.sec:hover{background:#FFFFFF;color:#0B0B0C}
+.pp .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:88px;border-top:1px solid rgba(255,255,255,0.18)}
+.pp .stats > div{padding:18px 20px 4px 0}
+.pp .stats > div + div{padding-left:20px;border-left:1px solid rgba(255,255,255,0.18)}
+.pp .stats b{display:block;margin-top:10px;font-weight:500;font-size:clamp(34px,4vw,56px);letter-spacing:-0.03em;line-height:1}
+.pp .note{margin:18px 0 0;font-size:13px;color:#8E8C95}
+.pp .light{background:#EEECE8;color:#0B0B0C;padding:120px 0}
+.pp .head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px 40px;margin-bottom:48px}
+.pp .head p{margin:0;max-width:460px;color:#4A4752;font-size:16px;line-height:1.6}
+.pp .feature{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);background:#FFFFFF;border:1px solid #DCD8D0}
+.pp .feature .ph{min-height:360px;overflow:hidden}
+.pp .ph img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.pp .feature:hover .ph img,.pp .rec:hover .ph img{transform:scale(1.04)}
+.pp .feature .tx{padding:36px 36px 32px;display:flex;flex-direction:column}
+.pp .feature h3{margin:12px 0 12px;font-weight:500;font-size:32px;letter-spacing:-0.02em}
+.pp .feature p,.pp .rec p{margin:0;color:#4A4752;font-size:15px;line-height:1.6}
+.pp .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:24px}
+.pp .chips span{padding:7px 11px;border:1px solid #CFCAD8;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#3A3842}
+.pp .grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:20px}
+.pp .rec{background:#FFFFFF;border:1px solid #DCD8D0}
+.pp .rec .ph{aspect-ratio:4 / 3;overflow:hidden;background:#17171A}
+.pp .rec .tx{padding:20px 20px 24px}
+.pp .rec h3{margin:10px 0 8px;font-weight:500;font-size:20px;letter-spacing:-0.01em;line-height:1.25}
+.pp .dark{position:relative;overflow:hidden;background:#0B0B0C;color:#FFFFFF;padding:120px 0}
+.pp .dark .glow{position:absolute;width:900px;height:900px;right:-300px;top:-300px;border-radius:50%;background:radial-gradient(circle,rgba(120,82,193,0.22),rgba(120,82,193,0) 66%);pointer-events:none}
+.pp .dark .head p{color:#A9A6AE}
+.pp .tiers{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.pp .tier{padding:30px 28px 32px;background:rgba(255,255,255,0.03);border:1px solid #2E2C34;display:flex;flex-direction:column}
+.pp .tier.top{border-color:#7852C1;background:rgba(120,82,193,0.10)}
+.pp .tier .nm{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.pp .tier .tag{padding:5px 9px;border:1px solid #A98BF5;color:#C9B6FF;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.pp .tier .pr{margin:18px 0 22px;font-weight:500;font-size:44px;letter-spacing:-0.03em;line-height:1}
+.pp .tier ul{margin:0;padding:0;list-style:none;border-top:1px solid #2E2C34}
+.pp .tier li{padding:12px 0;border-bottom:1px solid #2E2C34;font-size:15px;line-height:1.5;color:#C9C6CF;display:flex;gap:12px}
+.pp .tier li::before{content:"";flex:0 0 6px;height:6px;margin-top:8px;background:#A98BF5}
+.pp .inkind{position:relative;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px 40px;margin-top:20px;padding:28px;border:1px solid #2E2C34}
+.pp .inkind p{margin:8px 0 0;max-width:700px;color:#C9C6CF;font-size:15px;line-height:1.6}
+.pp .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid #0B0B0C}
+.pp .steps li{list-style:none;padding:22px 24px 8px 0}
+.pp .steps li + li{padding-left:24px;border-left:1px solid #CFCAD8}
+.pp .steps .n{font-weight:500;font-size:15px;color:#6A44BE}
+.pp .steps h3{margin:12px 0 8px;font-weight:500;font-size:21px;letter-spacing:-0.01em}
+.pp .steps p{margin:0;color:#4A4752;font-size:15px;line-height:1.55}
+.pp .plate{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:20px 48px;margin-top:88px;padding:26px 32px;background:#FFFFFF;border:1px solid #DCD8D0}
+.pp .plate .slab{font-size:14px;font-weight:500;color:#6B6862;white-space:nowrap}
+.pp .plate .logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;gap:24px}
+.pp .plate .logos div{height:72px;display:flex;align-items:center;justify-content:center}
+.pp .plate img{display:block;max-width:100%;max-height:100%;width:auto;height:auto}
+.pp .talk{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px 72px;align-items:start}
+.pp .who{padding:22px 0;border-top:1px solid #2E2C34}
+.pp .who b{display:block;margin-top:8px;font-weight:500;font-size:22px}
+.pp .who span{color:#A9A6AE;font-size:15px}
+.pp .row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-top:1px solid #2E2C34;color:#FFFFFF;text-decoration:none;transition:padding-left .25s,color .2s}
+.pp .row:hover{padding-left:8px;color:#C9B6FF}
+.pp .row small{display:block;margin-bottom:6px}
+.pp .row strong{font-weight:500;font-size:clamp(17px,1.6vw,21px);word-break:break-word}
+.pp .rows .row:last-child{border-bottom:1px solid #2E2C34}
+@media (max-width: 980px){.pp .grid4{grid-template-columns:repeat(2,minmax(0,1fr))}.pp .tiers{grid-template-columns:minmax(0,1fr)}.pp .steps{grid-template-columns:repeat(2,minmax(0,1fr))}.pp .steps li:nth-child(3){padding-left:0;border-left:0}.pp .talk{grid-template-columns:minmax(0,1fr)}}
+@media (max-width: 760px){.pp .hero .wrap{padding-top:72px}.pp .stats{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:56px}.pp .stats > div:nth-child(3){padding-left:0;border-left:0}.pp .stats > div:nth-child(n+3){border-top:1px solid rgba(255,255,255,0.18)}
+.pp .light,.pp .dark{padding:84px 0}.pp .feature{grid-template-columns:minmax(0,1fr)}.pp .feature .ph{min-height:0;aspect-ratio:4 / 3}.pp .feature .tx{padding:24px 22px}
+.pp .grid4{grid-template-columns:minmax(0,1fr)}.pp .steps{grid-template-columns:minmax(0,1fr)}.pp .steps li + li{padding-left:0;border-left:0;border-top:1px solid #CFCAD8}
+.pp .plate{grid-template-columns:minmax(0,1fr);padding:20px 18px;gap:14px;margin-top:64px}.pp .plate .logos{gap:14px}.pp .plate .logos div{height:52px}}
 </style>
 </helmet>
-<div style="font-family: 'Geist', system-ui, sans-serif; color: #F4F3F6; background-color: #0A0A0C; font-size: 17px; line-height: 1.6">
-
-<!-- HEADER -->
-<header style="position: sticky; top: 0; z-index: 50; background: rgba(10, 10, 12, 0.86); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid #26242C">
-<nav aria-label="Main" style="max-width: 1280px; margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 24px">
-<a href="Main.dc.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #FFFFFF">
-<svg viewBox="28 29 190 277" aria-hidden="true" style="width: 19px; height: 28px; display: block">
-<defs><linearGradient id="sSq" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="sk"></stop><stop offset="1" class="sv"></stop></linearGradient><linearGradient id="sLo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="sv"></stop><stop offset="1" class="sk"></stop></linearGradient></defs>
-<rect x="32" y="33" width="182" height="269" fill="none" stroke="#A98BF5" stroke-width="8"></rect>
-<polygon points="90,64 156,64 156,136 90,136" fill="url(#sSq)"></polygon>
-<polygon points="65,162 183,162 183,242" fill="url(#sLo)"></polygon>
-<polygon points="65,204 65,282 182,282" fill="url(#sLo)"></polygon>
-</svg>
-<span style="font-weight: 500; font-size: 15px; letter-spacing: -0.01em">Sunway Robotics Club</span>
-</a>
-<div class="navlinks" style="display: flex; align-items: center; gap: 28px; font-size: 14px">
-<a href="Main.dc.html" class="nl" style="color: #A9A6B2; text-decoration: none">Home</a>
-<a href="#reach" class="nl" style="color: #A9A6B2; text-decoration: none">Reach</a>
-<a href="#tiers" class="nl" style="color: #A9A6B2; text-decoration: none">Tiers</a>
-<a href="#process" class="nl" style="color: #A9A6B2; text-decoration: none">Process</a>
-<a href="#contact" style="color: #A98BF5; text-decoration: none; padding-left: 20px; border-left: 1px solid #26242C">Contact →</a>
+<div class="paper" style="font-family: 'Instrument Sans', system-ui, sans-serif; color: #0B0B0C; font-size: 17px; line-height: 1.55; overflow-x: clip">
+<nav aria-label="Main" style="position: sticky; top: 0; z-index: 50; color: #FFFFFF; background: rgba(11, 11, 12, 0.8); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255, 255, 255, 0.08)">
+<div style="max-width: 1360px; margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 24px">
+<a href="Main.dc.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #FFFFFF; font-weight: 600; font-size: 15px; letter-spacing: -0.01em">
+<svg viewBox="28 29 190 277" aria-hidden="true" style="width: 15px; height: 22px; display: block"><rect x="32" y="33" width="182" height="269" fill="none" stroke="#FFFFFF" stroke-width="12"></rect><polygon points="90,64 156,64 156,136 90,136" fill="#FFFFFF"></polygon><polygon points="65,162 183,162 183,242" fill="#FFFFFF"></polygon><polygon points="65,204 65,282 182,282" fill="#FFFFFF"></polygon></svg>
+Sunway Robotics Club</a>
+<div class="navlinks" style="display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 500">
+<a href="Main.dc.html#work" class="ul" style="text-decoration: none">Events</a>
+<a href="Newsletter.dc.html" class="ul" style="text-decoration: none">The Circuit</a>
+<a href="Sponsors.dc.html" class="ul" aria-current="page" style="text-decoration: none; color: #C9B6FF">Partners</a>
+<a href="#contact" class="ul" style="text-decoration: none">Contact</a>
 </div>
-<button type="button" class="menubtn" aria-label="{{ menuAria }}" onClick="{{ toggleMenu }}" aria-expanded="{{ menuExpanded }}" aria-controls="mnav" style="display: none; align-items: center; justify-content: center; width: 44px; height: 40px; padding: 0; border: 1px solid #3A3842; background: transparent; color: #FFFFFF; cursor: pointer"><sc-if value="{{ menuClosed }}" hint-placeholder-val="{{ true }}"><svg width="22" height="14" viewBox="0 0 22 14" aria-hidden="true" style="display: block"><path d="M0 1H22M0 7H22M0 13H22" stroke="currentColor" stroke-width="1.6" fill="none"></path></svg></sc-if><sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" style="display: block"><path d="M1 1L17 17M17 1L1 17" stroke="currentColor" stroke-width="1.6" fill="none"></path></svg></sc-if></button>
+<button type="button" class="menubtn" aria-label="Open menu" onClick="{{ toggleMenu }}" aria-expanded="{{ menuExpanded }}" aria-controls="mnav" style="display: none; align-items: center; height: 44px; padding: 0 4px; border: 0; background: transparent; color: #FFFFFF; cursor: pointer; justify-content: center; width: 44px"><svg width="22" height="14" viewBox="0 0 22 14" aria-hidden="true" style="display: block"><path d="M0 1H22M0 7H22M0 13H22" stroke="currentColor" stroke-width="1.6" fill="none"></path></svg></button>
+</div>
 </nav>
 <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
-<div id="mnav" class="mnav" style="border-top: 1px solid #26242C; padding: 8px 24px 20px; display: flex; flex-direction: column">
-<a href="Main.dc.html" style="color: #FFFFFF; text-decoration: none; padding: 14px 0; border-bottom: 1px solid #1C1B21; font-size: 20px; font-weight: 300">Home</a>
-<a href="#reach" onClick="{{ closeMenu }}" style="color: #FFFFFF; text-decoration: none; padding: 14px 0; border-bottom: 1px solid #1C1B21; font-size: 20px; font-weight: 300">Reach</a>
-<a href="#tiers" onClick="{{ closeMenu }}" style="color: #FFFFFF; text-decoration: none; padding: 14px 0; border-bottom: 1px solid #1C1B21; font-size: 20px; font-weight: 300">Tiers</a>
-<a href="#process" onClick="{{ closeMenu }}" style="color: #FFFFFF; text-decoration: none; padding: 14px 0; border-bottom: 1px solid #1C1B21; font-size: 20px; font-weight: 300">Process</a>
-<a href="#contact" onClick="{{ closeMenu }}" style="color: #A98BF5; text-decoration: none; padding: 14px 0; font-size: 20px; font-weight: 300">Contact →</a>
+<div id="mnav" style="position: fixed; inset: 0; z-index: 60; background: #0B0B0C; color: #FFFFFF; padding: 16px 24px; display: flex; flex-direction: column">
+<div style="display: flex; justify-content: space-between; align-items: center; height: 44px"><span style="font-weight: 600">Sunway Robotics Club</span><button type="button" aria-label="Close menu" onClick="{{ toggleMenu }}" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 0; background: transparent; color: #FFFFFF; cursor: pointer"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" style="display: block"><path d="M1 1L17 17M17 1L1 17" stroke="currentColor" stroke-width="1.6" fill="none"></path></svg></button></div>
+<a href="Main.dc.html#work" onClick="{{ closeMenu }}" style="color: #FFFFFF; text-decoration: none; font-size: 44px; letter-spacing: -0.04em; padding: 10px 0; border-bottom: 1px solid #2A2A2E; margin-top: 32px">Events</a>
+<a href="Newsletter.dc.html" style="color: #FFFFFF; text-decoration: none; font-size: 44px; letter-spacing: -0.04em; padding: 10px 0; border-bottom: 1px solid #2A2A2E">The Circuit</a>
+<a href="Sponsors.dc.html" style="color: #FFFFFF; text-decoration: none; font-size: 44px; letter-spacing: -0.04em; padding: 10px 0; border-bottom: 1px solid #2A2A2E">Partners</a>
+<a href="#contact" onClick="{{ closeMenu }}" style="color: #A98BF5; text-decoration: none; font-size: 44px; letter-spacing: -0.04em; padding: 10px 0">Contact</a>
 </div>
 </sc-if>
-<div class="prog" aria-hidden="true" style="height: 1px; background: #7852C1"></div>
-</header>
 
-<!-- HERO -->
-<section class="dk" style="padding: 72px 0 0; border-bottom: 1px solid #26242C">
-<div style="max-width: 1280px; margin: 0 auto; padding: 0 24px">
-<div class="mono" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 11px; letter-spacing: 0.12em; color: #8C8A94; padding-bottom: 16px; border-bottom: 1px solid #26242C">
-<span>PARTNERSHIPS — SUNWAY ROBOTICS CLUB</span><span>STUDENT-LED · FACULTY OF ENGINEERING &amp; TECHNOLOGY</span>
+<main class="pp">
+<!-- ======= HERO ======= -->
+<section id="top" class="hero">
+<img class="bg" src="/_blob/6bb899dac57c68d4b8cbd5057c8cdeb3" alt="" aria-hidden="true">
+<div class="shade" aria-hidden="true"></div>
+<div class="wrap">
+<div class="lb dash" style="color: #A98BF5">Partnerships</div>
+<h1>Partner with <span>Sunway Robotics Club.</span></h1>
+<p class="lede">Sponsorship funds the components, prizes and meals at our workshops and competitions, and puts your brand in front of the people who build there.</p>
+<div class="btns">
+<a class="btn pri" href="#talk">Request a proposal →</a>
+<a class="btn sec" href="#tiers">See the tiers</a>
 </div>
-<h1 style="margin: 56px 0 0; font-weight: 300; font-size: clamp(50px, 7.4vw, 118px); line-height: 0.96; letter-spacing: -0.045em">
-<span class="wipe" style="display: block">Partner with</span>
-<span class="wipe" style="display: block; color: #A98BF5">Sunway Robotics Club.</span>
-</h1>
-<div style="display: flex; flex-wrap: wrap; gap: 28px 64px; align-items: flex-end; justify-content: space-between; margin: 48px 0 72px">
-<p class="rv" style="margin: 0; max-width: 620px; font-size: 19px; color: #C2C0CA; font-weight: 300">Sponsorship funds the components, prizes and meals at our workshops and competitions, and puts your brand in front of the students who build there.</p>
-<div class="rv" style="display: flex; flex-wrap: wrap; gap: 0">
-<a href="#contact" class="btn bv" style="background: #7852C1; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 15px; padding: 16px 22px; display: flex; align-items: center; gap: 16px">Request a proposal <span class="arr">→</span></a>
-<a href="#tiers" class="btn bo" style="color: #E9E7EE; text-decoration: none; font-weight: 500; font-size: 15px; padding: 15px 22px; border: 1px solid #3A3842">See the tiers</a>
+<div class="stats" id="reach">
+<div><span class="lb" style="color: #A9A6AE">Members</span><b>400+</b></div>
+<div><span class="lb" style="color: #A9A6AE">Followers</span><b>1,200+</b></div>
+<div><span class="lb" style="color: #A9A6AE">Views in 30 days</span><b>60K+</b></div>
+<div><span class="lb" style="color: #A9A6AE">On LinkedIn</span><b>1,000+</b></div>
 </div>
-</div>
-</div>
-
-<!-- REACH -->
-<div id="reach" style="max-width: 1280px; margin: 0 auto; padding: 0 24px 72px">
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); border-left: 1px solid #26242C">
-<div class="rv" style="border-right: 1px solid #26242C; border-top: 1px solid #26242C; border-bottom: 1px solid #26242C; padding: 28px 24px 40px">
-<div class="mono" style="font-size: 11px; letter-spacing: 0.12em; color: #8C8A94; margin-bottom: 20px">CLUB MEMBERS</div>
-<div style="font-size: clamp(48px, 5vw, 76px); font-weight: 300; letter-spacing: -0.04em; line-height: 1">300</div>
-</div>
-<div class="rv2" style="border-right: 1px solid #26242C; border-top: 1px solid #26242C; border-bottom: 1px solid #26242C; padding: 28px 24px 40px">
-<div class="mono" style="font-size: 11px; letter-spacing: 0.12em; color: #8C8A94; margin-bottom: 20px">FOLLOWERS ACROSS PLATFORMS</div>
-<div style="font-size: clamp(48px, 5vw, 76px); font-weight: 300; letter-spacing: -0.04em; line-height: 1">1,200<span style="color: #A98BF5">+</span></div>
-</div>
-<div class="rv" style="border-right: 1px solid #26242C; border-top: 1px solid #26242C; border-bottom: 1px solid #26242C; padding: 28px 24px 40px">
-<div class="mono" style="font-size: 11px; letter-spacing: 0.12em; color: #8C8A94; margin-bottom: 20px">VIEWS IN 30 DAYS</div>
-<div style="font-size: clamp(48px, 5vw, 76px); font-weight: 300; letter-spacing: -0.04em; line-height: 1; color: #A98BF5">60K+</div>
-</div>
-<div class="rv2" style="border-right: 1px solid #26242C; border-top: 1px solid #26242C; border-bottom: 1px solid #26242C; padding: 28px 24px 40px">
-<div class="mono" style="font-size: 11px; letter-spacing: 0.12em; color: #8C8A94; margin-bottom: 20px">LINKEDIN CONNECTIONS</div>
-<div style="font-size: clamp(48px, 5vw, 76px); font-weight: 300; letter-spacing: -0.04em; line-height: 1">1,000<span style="color: #A98BF5">+</span></div>
-</div>
-</div>
-<p class="mono" style="margin: 16px 0 0; font-size: 11px; letter-spacing: 0.08em; color: #6E6B78">SOCIAL FIGURES AS OF NOVEMBER 2025 · [UPDATE BEFORE LAUNCH]</p>
+<p class="note">Views and LinkedIn connections as of November 2025.</p>
 </div>
 </section>
 
-<!-- TRACK RECORD (light) -->
-<section class="lt" style="color: #0A0A0C; padding: 130px 0">
-<div style="max-width: 1280px; margin: 0 auto; padding: 0 24px">
-<div class="mono rv" style="display: flex; align-items: center; gap: 16px; font-size: 11px; letter-spacing: 0.14em; color: #5E5B66; margin-bottom: 48px"><span>01 / TRACK RECORD</span><span class="fx" style="flex: 1 1 auto; height: 1px; background: #BDB8C6"></span></div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); border-left: 1px solid #CFCAD8; border-top: 1px solid #0A0A0C">
-<article class="card rv" style="grid-column: span 2; border-right: 1px solid #CFCAD8; border-bottom: 1px solid #CFCAD8; background: #FFFFFF; display: flex; flex-wrap: wrap; min-width: 0">
-<div style="flex: 1 1 280px; min-height: 280px; overflow: hidden; border-right: 1px solid #CFCAD8"><div class="zoom phl" style="height: 100%; display: flex; align-items: center; justify-content: center"><span class="mono" style="font-size: 11px; letter-spacing: 0.1em; color: #5A3A9E; background: #FFFFFF; padding: 5px 9px">[PHOTO: DODGEBOTS 2025]</span></div></div>
-<div style="flex: 1 1 280px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
-<div class="mono" style="font-size: 11px; letter-spacing: 0.12em; color: #5A3A9E">FLAGSHIP EVENT · NOV–DEC 2025</div>
-<h2 style="margin: 0; font-size: 34px; font-weight: 300; letter-spacing: -0.03em; line-height: 1.05">Dodgebots 2025</h2>
-<p style="margin: 0; color: #4A4752; font-size: 15px">A robotics workshop followed by a knockout tournament. Teams built robots over two weeks with mentor guidance, then competed at The Zone.</p>
-<div class="mono" style="display: flex; flex-wrap: wrap; gap: 0; margin-top: auto; font-size: 10px; letter-spacing: 0.1em; border: 1px solid #CFCAD8; align-self: flex-start">
-<span style="padding: 7px 10px; border-right: 1px solid #CFCAD8">12 TEAMS</span><span style="padding: 7px 10px; border-right: 1px solid #CFCAD8">36 STUDENTS</span><span style="padding: 7px 10px">2 EVENT DAYS</span>
+<!-- ======= TRACK RECORD ======= -->
+<section class="light">
+<div class="wrap">
+<div class="head">
+<div><div class="lb dash" style="color: #6A44BE; margin-bottom: 18px">Track record</div><h2 class="rv">What your support goes into</h2></div>
+<p>Workshops, competitions, talks and campus showcases, run by Sunway Robotics Club.</p>
 </div>
+<article class="feature rv">
+<div class="ph"><img src="/_blob/f9c7f0690cc0feed9f86957634bd5dd2" alt="Dodgebots 2025 participants and organisers on the arena stage" loading="lazy"></div>
+<div class="tx">
+<span class="lb" style="color: #6A44BE">Flagship event · Nov–Dec 2025</span>
+<h3>Dodgebots 2025</h3>
+<p>A robotics workshop followed by a knockout tournament. Teams built robots over two weeks with mentor guidance, then competed at The Zone.</p>
+<div class="chips"><span>12 teams</span><span>36 participants</span><span>2 event days</span></div>
 </div>
 </article>
-<article class="card rv2" style="border-right: 1px solid #CFCAD8; border-bottom: 1px solid #CFCAD8; background: #FFFFFF; padding: 28px; display: flex; flex-direction: column; gap: 10px">
-<div class="mono" style="font-size: 11px; letter-spacing: 0.12em; color: #5A3A9E">WORKSHOPS</div>
-<h3 style="margin: 0; font-size: 24px; font-weight: 400; letter-spacing: -0.02em">Servo Arm, Ottobot and LED Tetris</h3>
-<p style="margin: 0; color: #4A4752; font-size: 15px">Hands-on builds where every participant leaves with a working project.</p>
-</article>
-<article class="card rv" style="border-right: 1px solid #CFCAD8; border-bottom: 1px solid #CFCAD8; background: #FFFFFF; padding: 28px; display: flex; flex-direction: column; gap: 10px">
-<div class="mono" style="font-size: 11px; letter-spacing: 0.12em; color: #5A3A9E">COMPETITIONS</div>
-<h3 style="margin: 0; font-size: 24px; font-weight: 400; letter-spacing: -0.02em">Robocon 2025 · Vibathon shortlist</h3>
-<p style="margin: 0; color: #4A4752; font-size: 15px">Our first Robocon entry, and a shortlisted team at the Mercedes-Benz Vibathon.</p>
-</article>
-<article class="card rv2" style="border-right: 1px solid #CFCAD8; border-bottom: 1px solid #CFCAD8; background: #FFFFFF; padding: 28px; display: flex; flex-direction: column; gap: 10px">
-<div class="mono" style="font-size: 11px; letter-spacing: 0.12em; color: #5A3A9E">TALKS</div>
-<h3 style="margin: 0; font-size: 24px; font-weight: 400; letter-spacing: -0.02em">Combat robotics with Fikri</h3>
-<p style="margin: 0; color: #4A4752; font-size: 15px">A talk for members on designing and building combat robots.</p>
-</article>
-<article class="card rv3" style="border-right: 1px solid #CFCAD8; border-bottom: 1px solid #CFCAD8; background: #FFFFFF; padding: 28px; display: flex; flex-direction: column; gap: 10px">
-<div class="mono" style="font-size: 11px; letter-spacing: 0.12em; color: #5A3A9E">CAMPUS</div>
-<h3 style="margin: 0; font-size: 24px; font-weight: 400; letter-spacing: -0.02em">CnS Week and ECX Week booths</h3>
-<p style="margin: 0; color: #4A4752; font-size: 15px">Live demos of member projects for students across campus.</p>
-</article>
+<div class="grid4">
+<article class="rec rv"><div class="ph"><img src="/_blob/9b3a05a1b2d2975ba970069407cba1dc" alt="Robot arms built at the Servo Arm Workshop" loading="lazy"></div><div class="tx"><span class="lb" style="color: #6A44BE">Workshops</span><h3>Servo Arm, Ottobot and LED Tetris</h3><p>Hands-on builds where every participant leaves with a working project.</p></div></article>
+<article class="rec rv"><div class="ph"><img src="/_blob/c21941f15354f1e5b8d685f3e51290c7" alt="The Sunway team at Robocon Malaysia 2025" loading="lazy"></div><div class="tx"><span class="lb" style="color: #6A44BE">Competitions</span><h3>Robocon Malaysia 2025 and Vibathon 2026</h3><p>A national Robocon round at UTHM, and runner-up at the Mercedes-Benz Vibathon 2026.</p></div></article>
+<article class="rec rv"><div class="ph"><img src="/_blob/070bf9d9fcce43beced7c1819aa8c31a" alt="Fikri presenting on combat robotics" loading="lazy"></div><div class="tx"><span class="lb" style="color: #6A44BE">Talks</span><h3>Combat robotics with Fikri</h3><p>A talk for members on designing and building combat robots.</p></div></article>
+<article class="rec rv"><div class="ph"><img src="/_blob/75952b6a9ba8ab27f4f02576f2b65d09" alt="Sunway Robotics Club at ECX Week" loading="lazy"></div><div class="tx"><span class="lb" style="color: #6A44BE">Campus</span><h3>CnS Week and ECX Week booths</h3><p>Live demos of member projects for visitors across campus.</p></div></article>
 </div>
 </div>
 </section>
 
-<!-- TIERS (violet) -->
-<section id="tiers" class="vi" style="padding: 130px 0; color: #FFFFFF">
-<div style="max-width: 1280px; margin: 0 auto; padding: 0 24px">
-<div class="mono rv" style="display: flex; align-items: center; gap: 16px; font-size: 11px; letter-spacing: 0.14em; color: #C9B6FF; margin-bottom: 48px"><span>02 / SPONSORSHIP TIERS</span><span class="fx" style="flex: 1 1 auto; height: 1px; background: rgba(255,255,255,0.25)"></span></div>
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 48px">
-<h2 style="margin: 0; font-weight: 300; font-size: clamp(44px, 5.4vw, 88px); line-height: 0.96; letter-spacing: -0.045em">
-<span class="wipe" style="display: block">Three ways</span>
-<span class="wipe" style="display: block; color: #C9B6FF">to take part.</span>
-</h2>
-<p class="rv" style="margin: 0; max-width: 420px; color: #DCD2F5; font-weight: 300">Example tiers from Dodgebots 2025. Each event has its own proposal with tiers set to its budget.</p>
+<!-- ======= TIERS ======= -->
+<section id="tiers" class="dark">
+<div class="glow" aria-hidden="true"></div>
+<div class="wrap" style="position: relative">
+<div class="head">
+<div><div class="lb dash" style="color: #A98BF5; margin-bottom: 18px">Sponsorship tiers</div><h2 class="rv">Three ways to take part</h2></div>
+<p>Example tiers from Dodgebots 2025. Each event has its own proposal, with tiers set to its budget.</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); border: 1px solid rgba(255,255,255,0.25)">
-
-<article class="rv" style="background: #FFFFFF; color: #0A0A0C; padding: 36px; display: flex; flex-direction: column; gap: 18px">
-<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px"><span class="mono" style="font-size: 12px; letter-spacing: 0.14em">PLATINUM</span><span class="mono" style="font-size: 10px; letter-spacing: 0.1em; background: #5A3A9E; color: #FFFFFF; padding: 5px 9px">HIGHEST VISIBILITY</span></div>
-<div style="font-size: 60px; font-weight: 300; letter-spacing: -0.04em; line-height: 1">RM2,500</div>
-<ul class="tick tickd" style="list-style: none; margin: 0; padding: 0; color: #2A2830; font-size: 15px">
-<li>Dedicated feature post and three story mentions on Instagram and LinkedIn</li>
-<li>Standalone bunting, plus the largest top-placed logo on poster, banner, bunting and certificates</li>
-<li>Dedicated sponsor slide and top banner placement at the arena</li>
-<li>Emcee mentions at opening, award and closing ceremonies on both days</li>
-<li>Standalone thank-you post and feature in the highlight video</li>
-<li>Framed certificate and 3D-printed award presented on stage</li>
-<li>Full event photo package</li>
-</ul>
-</article>
-
-<article class="rv2" style="border-left: 1px solid rgba(255,255,255,0.25); padding: 36px; display: flex; flex-direction: column; gap: 18px">
-<span class="mono" style="font-size: 12px; letter-spacing: 0.14em">GOLD</span>
-<div style="font-size: 60px; font-weight: 300; letter-spacing: -0.04em; line-height: 1">RM1,800</div>
-<ul class="tick" style="list-style: none; margin: 0; padding: 0; color: #DCD2F5; font-size: 15px">
-<li>One post and two story mentions before the event</li>
-<li>Top-row logo on poster, banner, bunting and certificates</li>
-<li>Side display near the audience area</li>
-<li>Emcee mentions at the ceremonies</li>
-<li>Shared thank-you post and logo in the highlight video</li>
-<li>Framed certificate and 3D-printed award, delivered after the event</li>
-<li>Included in the photo highlight set</li>
-</ul>
-</article>
-
-<article class="rv3" style="border-left: 1px solid rgba(255,255,255,0.25); padding: 36px; display: flex; flex-direction: column; gap: 18px">
-<span class="mono" style="font-size: 12px; letter-spacing: 0.14em">SILVER</span>
-<div style="font-size: 60px; font-weight: 300; letter-spacing: -0.04em; line-height: 1">RM1,000</div>
-<ul class="tick" style="list-style: none; margin: 0; padding: 0; color: #DCD2F5; font-size: 15px">
-<li>Inclusion in the collective sponsor appreciation post</li>
-<li>Logo on the bottom row of the bunting</li>
-<li>Logo in the shared sponsor reel on screen</li>
-<li>Emcee mention on competition day</li>
-<li>Framed certificate and thank-you email</li>
-</ul>
-</article>
+<div class="tiers">
+<article class="tier top rv"><div class="nm"><span class="lb" style="color: #C9B6FF">Platinum</span><span class="tag">Highest visibility</span></div><div class="pr">RM2,500</div><ul><li>Dedicated feature post and three story mentions on Instagram and LinkedIn</li><li>Standalone bunting, plus the largest top-placed logo on poster, banner, bunting and certificates</li><li>Dedicated sponsor slide and top banner placement at the arena</li><li>Emcee mentions at opening, award and closing ceremonies on both days</li><li>Standalone thank-you post and feature in the highlight video</li><li>Framed certificate and 3D-printed award presented on stage</li><li>Full event photo package</li></ul></article>
+<article class="tier rv"><div class="nm"><span class="lb" style="color: #C9B6FF">Gold</span></div><div class="pr">RM1,800</div><ul><li>One post and two story mentions before the event</li><li>Top-row logo on poster, banner, bunting and certificates</li><li>Side display near the audience area</li><li>Emcee mentions at the ceremonies</li><li>Shared thank-you post and logo in the highlight video</li><li>Framed certificate and 3D-printed award, delivered after the event</li><li>Included in the photo highlight set</li></ul></article>
+<article class="tier rv"><div class="nm"><span class="lb" style="color: #C9B6FF">Silver</span></div><div class="pr">RM1,000</div><ul><li>Inclusion in the collective sponsor appreciation post</li><li>Logo on the bottom row of the bunting</li><li>Logo in the shared sponsor reel on screen</li><li>Emcee mention on competition day</li><li>Framed certificate and thank-you email</li></ul></article>
 </div>
-
-<div class="rv" style="margin-top: 24px; border: 1px dashed rgba(255,255,255,0.35); padding: 28px 32px; display: flex; flex-wrap: wrap; gap: 16px 40px; align-items: center; justify-content: space-between">
-<div style="flex: 1 1 420px">
-<div class="mono" style="font-size: 11px; letter-spacing: 0.12em; color: #C9B6FF; margin-bottom: 6px">NON-MONETARY SPONSORSHIP</div>
-<p style="margin: 0; color: #DCD2F5; font-weight: 300">We also accept components such as microcontrollers, motors and sensors, as well as meals, prizes and equipment. Benefits are agreed with the committee.</p>
-</div>
-<a href="#contact" class="btn" style="color: #FFFFFF; text-decoration: none; font-weight: 500; padding: 14px 22px; border: 1px solid #FFFFFF; display: flex; gap: 14px">Discuss in-kind support <span class="arr">→</span></a>
+<div class="inkind rv">
+<div><span class="lb" style="color: #C9B6FF">Non-monetary sponsorship</span>
+<p>We also accept components such as microcontrollers, motors and sensors, as well as meals, prizes and equipment. Benefits are agreed with the committee.</p></div>
+<a class="btn sec" href="#talk">Discuss in-kind support →</a>
 </div>
 </div>
 </section>
 
-<!-- PROCESS + PAST SPONSORS (light) -->
-<section id="process" class="lt" style="color: #0A0A0C; padding: 130px 0">
-<div style="max-width: 1280px; margin: 0 auto; padding: 0 24px">
-<div class="mono rv" style="display: flex; align-items: center; gap: 16px; font-size: 11px; letter-spacing: 0.14em; color: #5E5B66; margin-bottom: 48px"><span>03 / HOW IT WORKS</span><span class="fx" style="flex: 1 1 auto; height: 1px; background: #BDB8C6"></span></div>
-<ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); border-left: 1px solid #CFCAD8; border-top: 1px solid #0A0A0C">
-<li class="rv" style="border-right: 1px solid #CFCAD8; border-bottom: 1px solid #CFCAD8; padding: 28px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
-<span style="font-size: 56px; font-weight: 300; letter-spacing: -0.05em; line-height: 1; color: #5A3A9E">01</span>
-<h3 style="margin: 0; font-size: 21px; font-weight: 400">Request a proposal</h3>
-<p style="margin: 0; color: #4A4752; font-size: 15px">Tell us which event you'd like to support and we'll send its proposal and budget.</p>
-</li>
-<li class="rv2" style="border-right: 1px solid #CFCAD8; border-bottom: 1px solid #CFCAD8; padding: 28px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
-<span style="font-size: 56px; font-weight: 300; letter-spacing: -0.05em; line-height: 1; color: #5A3A9E">02</span>
-<h3 style="margin: 0; font-size: 21px; font-weight: 400">Choose a tier</h3>
-<p style="margin: 0; color: #4A4752; font-size: 15px">Pick a monetary tier or an in-kind package.</p>
-</li>
-<li class="rv3" style="border-right: 1px solid #CFCAD8; border-bottom: 1px solid #CFCAD8; padding: 28px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
-<span style="font-size: 56px; font-weight: 300; letter-spacing: -0.05em; line-height: 1; color: #5A3A9E">03</span>
-<h3 style="margin: 0; font-size: 21px; font-weight: 400">Sign the commitment form</h3>
-<p style="margin: 0; color: #4A4752; font-size: 15px">Complete the Partnership Commitment Form included with the proposal.</p>
-</li>
-<li class="rv" style="border-right: 1px solid #CFCAD8; border-bottom: 1px solid #CFCAD8; padding: 28px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
-<span style="font-size: 56px; font-weight: 300; letter-spacing: -0.05em; line-height: 1; color: #5A3A9E">04</span>
-<h3 style="margin: 0; font-size: 21px; font-weight: 400">Send your logos</h3>
-<p style="margin: 0; color: #4A4752; font-size: 15px">Coloured and black-and-white versions, PNG, at least 900 × 900 px, by the date in the proposal.</p>
-</li>
+<!-- ======= HOW IT WORKS ======= -->
+<section class="light">
+<div class="wrap">
+<div class="head"><div><div class="lb dash" style="color: #6A44BE; margin-bottom: 18px">How it works</div><h2 class="rv">From first email to event day</h2></div></div>
+<ol class="steps" style="margin: 0; padding: 0">
+<li class="rv"><span class="n">01</span><h3>Request a proposal</h3><p>Tell us which event you'd like to support and we'll send its proposal and budget.</p></li>
+<li class="rv2"><span class="n">02</span><h3>Choose a tier</h3><p>Pick a monetary tier or an in-kind package.</p></li>
+<li class="rv3"><span class="n">03</span><h3>Sign the commitment form</h3><p>Complete the Partnership Commitment Form included with the proposal.</p></li>
+<li class="rv"><span class="n">04</span><h3>Send your logos</h3><p>Coloured and black-and-white versions, PNG, at least 900 × 900 px, by the date in the proposal.</p></li>
 </ol>
-
-<div class="mono rv" style="display: flex; align-items: center; gap: 16px; font-size: 11px; letter-spacing: 0.14em; color: #5E5B66; margin: 100px 0 28px"><span>04 / PAST SPONSORS &amp; PARTNERS</span><span class="fx" style="flex: 1 1 auto; height: 1px; background: #BDB8C6"></span></div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); border-left: 1px solid #CFCAD8; border-top: 1px solid #CFCAD8">
-<div class="phl rv" style="height: 110px; border-right: 1px solid #CFCAD8; border-bottom: 1px solid #CFCAD8; display: flex; align-items: center; justify-content: center"><span class="mono" style="font-size: 10px; letter-spacing: 0.1em; color: #5A3A9E; background: #FFFFFF; padding: 4px 8px">[SPONSOR LOGO]</span></div>
-<div class="phl rv2" style="height: 110px; border-right: 1px solid #CFCAD8; border-bottom: 1px solid #CFCAD8; display: flex; align-items: center; justify-content: center"><span class="mono" style="font-size: 10px; letter-spacing: 0.1em; color: #5A3A9E; background: #FFFFFF; padding: 4px 8px">[SPONSOR LOGO]</span></div>
-<div class="phl rv3" style="height: 110px; border-right: 1px solid #CFCAD8; border-bottom: 1px solid #CFCAD8; display: flex; align-items: center; justify-content: center"><span class="mono" style="font-size: 10px; letter-spacing: 0.1em; color: #5A3A9E; background: #FFFFFF; padding: 4px 8px">[SPONSOR LOGO]</span></div>
-<div class="phl rv" style="height: 110px; border-right: 1px solid #CFCAD8; border-bottom: 1px solid #CFCAD8; display: flex; align-items: center; justify-content: center"><span class="mono" style="font-size: 10px; letter-spacing: 0.1em; color: #5A3A9E; background: #FFFFFF; padding: 4px 8px">[SPONSOR LOGO]</span></div>
-<div class="phl rv2" style="height: 110px; border-right: 1px solid #CFCAD8; border-bottom: 1px solid #CFCAD8; display: flex; align-items: center; justify-content: center"><span class="mono" style="font-size: 10px; letter-spacing: 0.1em; color: #5A3A9E; background: #FFFFFF; padding: 4px 8px">[SPONSOR LOGO]</span></div>
-</div>
+<div class="plate rv"><span class="slab">Supported by</span><div class="logos"><div><img src="/_blob/dfb53f4ab5afa546fd6f573e59ef4997" alt="Jeffrey Cheah Foundation" loading="lazy"></div><div><img src="/_blob/39a3ff91dfce64e9fa58a1ab731fce85" alt="Campus with a Conscience" loading="lazy"></div><div><img src="/_blob/16c70f434d40e49313b883be7b2f5761" alt="Sunway College" loading="lazy"></div></div></div>
 </div>
 </section>
 
-<!-- CONTACT (dark) -->
-<section id="contact" class="dk" style="padding: 120px 0; border-top: 1px solid #26242C">
-<div style="max-width: 1280px; margin: 0 auto; padding: 0 24px">
-<div class="mono rv" style="display: flex; align-items: center; gap: 16px; font-size: 11px; letter-spacing: 0.14em; color: #8C8A94; margin-bottom: 48px"><span>05 / CONTACT</span><span class="fx" style="flex: 1 1 auto; height: 1px; background: #3A3842"></span></div>
-<div style="display: flex; flex-wrap: wrap; gap: 48px 72px; align-items: flex-end; justify-content: space-between">
-<h2 class="rv" style="flex: 1 1 440px; margin: 0; font-weight: 300; font-size: clamp(44px, 5.4vw, 88px); letter-spacing: -0.045em; line-height: 0.96">Let's talk <span style="color: #A98BF5">partnership.</span></h2>
-<div class="rv2" style="flex: 1 1 380px; border: 1px solid #3A3842">
-<div style="padding: 24px; border-bottom: 1px solid #3A3842">
-<div class="mono" style="font-size: 10px; letter-spacing: 0.14em; color: #8C8A94; margin-bottom: 8px">CONTACT PERSON</div>
-<div style="font-size: 24px; font-weight: 400; letter-spacing: -0.02em">Christopher Chan Yan Kai</div>
-<div style="color: #A9A6B2; font-weight: 300">President, Sunway Robotics Club</div>
+<!-- ======= CONTACT ======= -->
+<section id="talk" class="dark">
+<div class="glow" aria-hidden="true"></div>
+<div class="wrap talk" style="position: relative">
+<div>
+<div class="lb dash" style="color: #A98BF5; margin-bottom: 18px">Contact</div>
+<h2 class="rv">Let's talk <span style="color: #A98BF5">partnership.</span></h2>
+<div class="who" style="margin-top: 40px"><span class="lb" style="color: #A9A6AE">Contact person</span><b>Christopher Chan Yan Kai</b><span>President, Sunway Robotics Club</span></div>
 </div>
-<a href="mailto:sunwayroboticsclub@gmail.com" class="btn" style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 24px; border-bottom: 1px solid #3A3842; color: #FFFFFF; text-decoration: none"><span><span class="mono" style="display: block; font-size: 10px; letter-spacing: 0.14em; color: #8C8A94">EMAIL</span>sunwayroboticsclub@gmail.com</span><span class="arr" style="color: #A98BF5">→</span></a>
-<a href="tel:+60166217383" class="btn" style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 24px; border-bottom: 1px solid #3A3842; color: #FFFFFF; text-decoration: none"><span><span class="mono" style="display: block; font-size: 10px; letter-spacing: 0.14em; color: #8C8A94">PHONE / WHATSAPP</span>016-621 7383</span><span class="arr" style="color: #A98BF5">→</span></a>
-<a href="https://www.linkedin.com/in/sunwayrobotics/" class="btn" style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 24px; color: #FFFFFF; text-decoration: none"><span><span class="mono" style="display: block; font-size: 10px; letter-spacing: 0.14em; color: #8C8A94">LINKEDIN</span>@sunwayroboticsclub</span><span class="arr" style="color: #A98BF5">↗</span></a>
-</div>
+<div class="rows">
+<a class="row" href="mailto:sunwayroboticsclub@gmail.com"><span><small class="lb" style="color: #A9A6AE">Email</small><strong>sunwayroboticsclub@gmail.com</strong></span><span>→</span></a>
+<a class="row" href="tel:+60166217383"><span><small class="lb" style="color: #A9A6AE">Phone / WhatsApp</small><strong>016-621 7383</strong></span><span>→</span></a>
+<a class="row" href="https://www.linkedin.com/in/sunwayrobotics/"><span><small class="lb" style="color: #A9A6AE">LinkedIn</small><strong>Sunway Robotics Club</strong></span><span>↗</span></a>
+<a class="row" href="https://www.instagram.com/sunwayrobotics/"><span><small class="lb" style="color: #A9A6AE">Instagram</small><strong>@sunwayrobotics</strong></span><span>↗</span></a>
 </div>
 </div>
 </section>
+</main>
 
-<footer class="dk" style="color: #8C8A94; border-top: 1px solid #26242C; padding: 32px 0">
-<div class="mono" style="max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 11px; letter-spacing: 0.1em">
-<span>© 2026 SUNWAY ROBOTICS CLUB · PARTNERSHIPS</span>
-<span style="display: flex; gap: 24px"><a href="https://www.instagram.com/sunwayrobotics/" class="nl" style="color: #E9E7EE; text-decoration: none">INSTAGRAM ↗</a><a href="https://www.linkedin.com/in/sunwayrobotics/" class="nl" style="color: #E9E7EE; text-decoration: none">LINKEDIN ↗</a><a href="Main.dc.html" class="nl" style="color: #E9E7EE; text-decoration: none">HOME →</a></span>
+<footer id="contact" style="background: #0B0B0C; color: #FFFFFF; padding: 80px 0 28px; border-top: 1px solid #2A2A2E">
+<div style="max-width: 1360px; margin: 0 auto; padding: 0 24px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; padding-bottom: 72px">
+<div><div class="mu" style="font-size: 11px; letter-spacing: 0.12em; color: #8E8C95; margin-bottom: 14px">Navigation</div><div style="display: flex; flex-direction: column; gap: 6px"><a href="Main.dc.html#work" class="ul" style="text-decoration: none; width: fit-content">Events</a><a href="Newsletter.dc.html" class="ul" style="text-decoration: none; width: fit-content">The Circuit</a><a href="Sponsors.dc.html" class="ul" style="text-decoration: none; width: fit-content">Partners</a></div></div>
+<div><div class="mu" style="font-size: 11px; letter-spacing: 0.12em; color: #8E8C95; margin-bottom: 14px">Email</div><a href="mailto:sunwayroboticsclub@gmail.com" class="ul" style="text-decoration: none">sunwayroboticsclub@gmail.com</a></div>
+<div><div class="mu" style="font-size: 11px; letter-spacing: 0.12em; color: #8E8C95; margin-bottom: 14px">Social</div><div style="display: flex; flex-direction: column; gap: 6px"><a href="https://www.instagram.com/sunwayrobotics/" class="ul" style="text-decoration: none; width: fit-content">Instagram ↗</a><a href="https://www.linkedin.com/in/sunwayrobotics/" class="ul" style="text-decoration: none; width: fit-content">LinkedIn ↗</a></div></div>
+<div><div class="mu" style="font-size: 11px; letter-spacing: 0.12em; color: #8E8C95; margin-bottom: 14px">Location</div><span style="color: #B5B2BD">Faculty of Engineering &amp; Technology<br>Sunway University, Bandar Sunway</span></div>
+</div>
+<a href="Main.dc.html" aria-label="Sunway Robotics Club, back to top" class="rv" style="display: flex; align-items: center; gap: clamp(16px, 3vw, 40px); text-decoration: none; color: #FFFFFF; border-top: 1px solid #2A2A2E; padding-top: 40px">
+<svg viewBox="28 29 190 277" aria-hidden="true" style="width: clamp(70px, 11vw, 160px); height: auto; display: block; flex: 0 0 auto">
+<defs><linearGradient id="fSq" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="sk"></stop><stop offset="1" class="sv"></stop></linearGradient><linearGradient id="fLo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="sv"></stop><stop offset="1" class="sk"></stop></linearGradient></defs>
+<rect x="32" y="33" width="182" height="269" fill="none" stroke="#A98BF5" stroke-width="4"></rect>
+<polygon points="90,64 156,64 156,136 90,136" fill="url(#fSq)"></polygon>
+<polygon points="65,162 183,162 183,242" fill="url(#fLo)"></polygon>
+<polygon points="65,204 65,282 182,282" fill="url(#fLo)"></polygon>
+</svg>
+<span style="font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(34px, 6vw, 86px); line-height: 0.92">Sunway<br>Robotics<br>Club</span>
+</a>
+<div class="m" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; margin-top: 40px; font-size: 12px; color: #8E8C95"><span>© 2026 sunway robotics club</span><span>a space to build, for everyone</span></div>
 </div>
 </footer>
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5200}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4800}}'>
 class Component extends DCLogic {
   constructor(props) {
     super(props);
@@ -314,7 +416,6 @@ class Component extends DCLogic {
       menuClosed: !menu,
       menuAria: menu ? 'Close menu' : 'Open menu',
       menuExpanded: menu ? 'true' : 'false',
-      menuLabel: menu ? 'CLOSE' : 'MENU',
       toggleMenu: () => this.setState({ menu: !menu }),
       closeMenu: () => this.setState({ menu: false })
     };
