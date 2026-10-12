@@ -34,7 +34,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #7852
 /* background elements */
 @media (max-width: 900px){.ghost,.dial{display:none !important}}
 .herovid{object-fit:cover;object-position:50% 50%}
-.srow{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:20px 48px;margin-top:64px;padding:26px 32px;background:#FFFFFF;border:1px solid #DCD8D0}.slab{font-size:14px;font-weight:500;color:#6B6862;white-space:nowrap}.stiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;gap:24px}.stile{height:72px;display:flex;align-items:center;justify-content:center}.stile img{display:block;max-width:100%;max-height:100%;width:auto;height:auto}@media (max-width: 760px){.srow{grid-template-columns:minmax(0,1fr);margin-top:48px;padding:20px 18px;gap:14px}.stiles{gap:14px}.stile{height:52px}}
+.srow{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 48px;margin-top:64px;padding-top:28px;border-top:1px solid #C6C2BB}.slab{font-size:14px;font-weight:500;color:#6B6862;white-space:nowrap}.stiles{display:flex;flex-wrap:wrap;align-items:center;gap:28px 56px}.stile{height:64px;display:flex;align-items:center}.stile img{display:block;max-width:100%;max-height:100%;width:auto;height:auto}@media (max-width: 760px){.srow{margin-top:48px;gap:16px}.stiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;width:100%}.stile{height:48px;justify-content:center}}
 @media (max-width: 760px), (orientation: portrait){#top{height:auto !important;min-height:0 !important}#top .heroOut{position:relative !important;inset:auto !important}.herostage{flex:none !important}.herovid{height:auto !important;aspect-ratio:4 / 3;max-height:72vh}}
 @keyframes ilSwing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(9deg)}}@keyframes ilSwing2{0%,100%{transform:rotate(12deg)}50%{transform:rotate(-14deg)}}@keyframes ilNudge{0%,100%{transform:translate(0,0)}25%{transform:translate(4px,-4px)}75%{transform:translate(-4px,3px)}}@keyframes ilDrop{0%{transform:translateY(-128px)}100%{transform:translateY(0)}}@keyframes ilOrbit{to{transform:rotate(360deg)}}@keyframes ilPulse{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.5);opacity:1}}@keyframes ilRing{0%{transform:scale(1);opacity:.9}100%{transform:scale(2.6);opacity:0}}@keyframes ilRoll{0%,100%{transform:translateX(0)}50%{transform:translateX(84px)}}@keyframes ilEq{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}@keyframes ilBlink{0%,100%{opacity:.2}50%{opacity:1}}@keyframes ilConvey{to{transform:translateX(44px)}}@keyframes ilFlow{to{stroke-dashoffset:-20}}@keyframes ilFlow2{from{stroke-dashoffset:148}to{stroke-dashoffset:0}}.wrow .wimg svg{transition:transform .9s cubic-bezier(.2,.7,.2,1)}.wrow:hover .wimg svg{transform:scale(1.04)}@media (prefers-reduced-motion: reduce){.il *{animation:none !important}}
 @keyframes mqL{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -214,14 +214,14 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #7852
 .pp .dark{position:relative;overflow:hidden;background:#0B0B0C;color:#FFFFFF;padding:120px 0}
 .pp .dark .glow{position:absolute;width:900px;height:900px;right:-300px;top:-300px;border-radius:50%;background:radial-gradient(circle,rgba(120,82,193,0.22),rgba(120,82,193,0) 66%);pointer-events:none}
 .pp .dark .head p{color:#A9A6AE}
-.pp .tiers{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.pp .tier{padding:30px 28px 32px;background:rgba(255,255,255,0.03);border:1px solid #2E2C34;display:flex;flex-direction:column}
+.pp .tiers{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.pp .tier{padding:26px 22px 26px;background:rgba(255,255,255,0.03);border:1px solid #2E2C34;display:flex;flex-direction:column}
 .pp .tier.top{border-color:#7852C1;background:rgba(120,82,193,0.10)}
 .pp .tier .nm{display:flex;justify-content:space-between;align-items:center;gap:12px}
 .pp .tier .tag{padding:5px 9px;border:1px solid #A98BF5;color:#C9B6FF;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
-.pp .tier .pr{margin:18px 0 22px;font-weight:500;font-size:44px;letter-spacing:-0.03em;line-height:1}
+.pp .tier .pr{margin:16px 0 6px;font-weight:500;font-size:44px;letter-spacing:-0.03em;line-height:1}
 .pp .tier ul{margin:0;padding:0;list-style:none;border-top:1px solid #2E2C34}
-.pp .tier li{padding:12px 0;border-bottom:1px solid #2E2C34;font-size:15px;line-height:1.5;color:#C9C6CF;display:flex;gap:12px}
+.pp .tier li{padding:11px 0;border-bottom:1px solid #2E2C34;font-size:15px;line-height:1.5;color:#C9C6CF;display:flex;gap:12px}
 .pp .tier li::before{content:"";flex:0 0 6px;height:6px;margin-top:8px;background:#A98BF5}
 .pp .inkind{position:relative;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px 40px;margin-top:20px;padding:28px;border:1px solid #2E2C34}
 .pp .inkind p{margin:8px 0 0;max-width:700px;color:#C9C6CF;font-size:15px;line-height:1.6}
@@ -231,10 +231,10 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #7852
 .pp .steps .n{font-weight:500;font-size:15px;color:#6A44BE}
 .pp .steps h3{margin:12px 0 8px;font-weight:500;font-size:21px;letter-spacing:-0.01em}
 .pp .steps p{margin:0;color:#4A4752;font-size:15px;line-height:1.55}
-.pp .plate{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:20px 48px;margin-top:88px;padding:26px 32px;background:#FFFFFF;border:1px solid #DCD8D0}
+.pp .plate{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 48px;margin-top:88px;padding-top:28px;border-top:1px solid #CFCAD8}
 .pp .plate .slab{font-size:14px;font-weight:500;color:#6B6862;white-space:nowrap}
-.pp .plate .logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;gap:24px}
-.pp .plate .logos div{height:72px;display:flex;align-items:center;justify-content:center}
+.pp .plate .logos{display:flex;flex-wrap:wrap;align-items:center;gap:28px 56px}
+.pp .plate .logos div{height:64px;display:flex;align-items:center}
 .pp .plate img{display:block;max-width:100%;max-height:100%;width:auto;height:auto}
 .pp .talk{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px 72px;align-items:start}
 .pp .who{padding:22px 0;border-top:1px solid #2E2C34}
@@ -249,7 +249,21 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #7852
 @media (max-width: 760px){.pp .hero .wrap{padding-top:72px}.pp .stats{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:56px}.pp .stats > div:nth-child(3){padding-left:0;border-left:0}.pp .stats > div:nth-child(n+3){border-top:1px solid rgba(255,255,255,0.18)}
 .pp .light,.pp .dark{padding:84px 0}.pp .feature{grid-template-columns:minmax(0,1fr)}.pp .feature .ph{min-height:0;aspect-ratio:4 / 3}.pp .feature .tx{padding:24px 22px}
 .pp .grid4{grid-template-columns:minmax(0,1fr)}.pp .steps{grid-template-columns:minmax(0,1fr)}.pp .steps li + li{padding-left:0;border-left:0;border-top:1px solid #CFCAD8}
-.pp .plate{grid-template-columns:minmax(0,1fr);padding:20px 18px;gap:14px;margin-top:64px}.pp .plate .logos{gap:14px}.pp .plate .logos div{height:52px}}
+.pp .plate{margin-top:64px;gap:16px}.pp .plate .logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;width:100%}.pp .plate .logos div{height:48px;justify-content:center}}
+
+.pp .tier .pl{margin:0 0 20px;font-size:14px;color:#A9A6AE}
+.pp .all{position:relative;margin:16px 0 0;padding:18px 22px;border:1px solid #2E2C34;color:#C9C6CF;font-size:15px;line-height:1.6}
+.pp .all b{color:#FFFFFF;font-weight:500}
+.pp .why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid #0B0B0C}
+.pp .why > div{padding:24px 28px 8px 0}
+.pp .why > div + div{padding-left:28px;border-left:1px solid #CFCAD8}
+.pp .why h3,.pp .goes h3{margin:0 0 10px;font-weight:500;font-size:22px;letter-spacing:-0.01em;line-height:1.25}
+.pp .why p,.pp .goes p{margin:0;color:#4A4752;font-size:15px;line-height:1.6}
+.pp .goes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:72px}
+.pp .goes > div{padding:22px 22px 24px;border:1px solid #CFCAD8}
+.pp .goes h3{font-size:18px}
+@media (max-width: 1100px){.pp .tiers{grid-template-columns:repeat(2,minmax(0,1fr))}.pp .goes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width: 760px){.pp .tiers,.pp .goes{grid-template-columns:minmax(0,1fr)}.pp .why{grid-template-columns:minmax(0,1fr)}.pp .why > div + div{padding-left:0;border-left:0;border-top:1px solid #CFCAD8}}
 </style>
 </helmet>
 <div class="paper" style="font-family: 'Instrument Sans', system-ui, sans-serif; color: #0B0B0C; font-size: 17px; line-height: 1.55; overflow-x: clip">
@@ -280,47 +294,43 @@ Sunway Robotics Club</a>
 <main class="pp">
 <!-- ======= HERO ======= -->
 <section id="top" class="hero">
-<img class="bg" src="/_blob/6bb899dac57c68d4b8cbd5057c8cdeb3" alt="" aria-hidden="true">
+<img class="bg" src="/_blob/c28be5801fac3081433e07fcf7b60a1b" alt="" aria-hidden="true">
 <div class="shade" aria-hidden="true"></div>
 <div class="wrap">
-<div class="lb dash" style="color: #A98BF5">Partnerships</div>
+<div class="lb dash" style="color: #A98BF5">Partnerships · 2026/2027</div>
 <h1>Partner with <span>Sunway Robotics Club.</span></h1>
-<p class="lede">Sponsorship funds the components, prizes and meals at our workshops and competitions, and puts your brand in front of the people who build there.</p>
+<p class="lede">A year-long partnership puts your name on the workshops and outreach sessions we run, your hardware in members' hands, and a report you can use for CSR at the end of every semester.</p>
 <div class="btns">
-<a class="btn pri" href="#talk">Request a proposal →</a>
+<a class="btn pri" href="#talk">Request the proposal →</a>
 <a class="btn sec" href="#tiers">See the tiers</a>
 </div>
 <div class="stats" id="reach">
 <div><span class="lb" style="color: #A9A6AE">Members</span><b>400+</b></div>
-<div><span class="lb" style="color: #A9A6AE">Followers</span><b>1,200+</b></div>
-<div><span class="lb" style="color: #A9A6AE">Views in 30 days</span><b>60K+</b></div>
-<div><span class="lb" style="color: #A9A6AE">On LinkedIn</span><b>1,000+</b></div>
+<div><span class="lb" style="color: #A9A6AE">Instagram followers</span><b>1,000+</b></div>
+<div><span class="lb" style="color: #A9A6AE">Monthly impressions</span><b>15K+</b></div>
+<div><span class="lb" style="color: #A9A6AE">Per campus showcase</span><b>800+</b></div>
 </div>
-<p class="note">Views and LinkedIn connections as of November 2025.</p>
 </div>
 </section>
 
-<!-- ======= TRACK RECORD ======= -->
+<!-- ======= WHY ======= -->
 <section class="light">
 <div class="wrap">
 <div class="head">
-<div><div class="lb dash" style="color: #6A44BE; margin-bottom: 18px">Track record</div><h2 class="rv">What your support goes into</h2></div>
-<p>Workshops, competitions, talks and campus showcases, run by Sunway Robotics Club.</p>
+<div><div class="lb dash" style="color: #6A44BE; margin-bottom: 18px">Why partner with us</div><h2 class="rv">More than a logo on a banner</h2></div>
+<p>Ten hands-on workshops a year, robots built for Robocon and combat robotics, an outreach session with a partner NGO each semester, and industry visits and talks.</p>
 </div>
-<article class="feature rv">
-<div class="ph"><img src="/_blob/f9c7f0690cc0feed9f86957634bd5dd2" alt="Dodgebots 2025 participants and organisers on the arena stage" loading="lazy"></div>
-<div class="tx">
-<span class="lb" style="color: #6A44BE">Flagship event · Nov–Dec 2025</span>
-<h3>Dodgebots 2025</h3>
-<p>A robotics workshop followed by a knockout tournament. Teams built robots over two weeks with mentor guidance, then competed at The Zone.</p>
-<div class="chips"><span>12 teams</span><span>36 participants</span><span>2 event days</span></div>
+<div class="why">
+<div class="rv"><h3>Your name on what we build</h3><p>Partners name our workshops and outreach sessions, so your brand is attached to something members and children actually make.</p></div>
+<div class="rv2"><h3>Your hardware in members' hands</h3><p>Donated components go straight into workshop kits. Members learn on your parts and keep using them in their own projects.</p></div>
+<div class="rv3"><h3>Impact you can report</h3><p>Every partner gets an end-of-semester report with photos, attendance and a spending breakdown, ready for your CSR or ESG reporting.</p></div>
 </div>
-</article>
-<div class="grid4">
-<article class="rec rv"><div class="ph"><img src="/_blob/9b3a05a1b2d2975ba970069407cba1dc" alt="Robot arms built at the Servo Arm Workshop" loading="lazy"></div><div class="tx"><span class="lb" style="color: #6A44BE">Workshops</span><h3>Servo Arm, Ottobot and LED Tetris</h3><p>Hands-on builds where every participant leaves with a working project.</p></div></article>
-<article class="rec rv"><div class="ph"><img src="/_blob/c21941f15354f1e5b8d685f3e51290c7" alt="The Sunway team at Robocon Malaysia 2025" loading="lazy"></div><div class="tx"><span class="lb" style="color: #6A44BE">Competitions</span><h3>Robocon Malaysia 2025 and Vibathon 2026</h3><p>A national Robocon round at UTHM, and runner-up at the Mercedes-Benz Vibathon 2026.</p></div></article>
-<article class="rec rv"><div class="ph"><img src="/_blob/070bf9d9fcce43beced7c1819aa8c31a" alt="Fikri presenting on combat robotics" loading="lazy"></div><div class="tx"><span class="lb" style="color: #6A44BE">Talks</span><h3>Combat robotics with Fikri</h3><p>A talk for members on designing and building combat robots.</p></div></article>
-<article class="rec rv"><div class="ph"><img src="/_blob/75952b6a9ba8ab27f4f02576f2b65d09" alt="Sunway Robotics Club at ECX Week" loading="lazy"></div><div class="tx"><span class="lb" style="color: #6A44BE">Campus</span><h3>CnS Week and ECX Week booths</h3><p>Live demos of member projects for visitors across campus.</p></div></article>
+<div class="head" style="margin: 96px 0 0"><div><div class="lb dash" style="color: #6A44BE">Where your sponsorship goes</div></div></div>
+<div class="goes" style="margin-top: 28px">
+<div class="rv"><h3>Hardware &amp; components</h3><p>Microcontrollers, motor drivers, sensors, servos, custom PCBs and batteries.</p></div>
+<div class="rv2"><h3>Prototyping &amp; fabrication</h3><p>3D printing filament, laser cutting and workshop tooling.</p></div>
+<div class="rv3"><h3>Community outreach</h3><p>Build kits and transport for NGO outreach sessions.</p></div>
+<div class="rv"><h3>Member development</h3><p>Entry fees and transport for external robotics competitions.</p></div>
 </div>
 </div>
 </section>
@@ -330,17 +340,16 @@ Sunway Robotics Club</a>
 <div class="glow" aria-hidden="true"></div>
 <div class="wrap" style="position: relative">
 <div class="head">
-<div><div class="lb dash" style="color: #A98BF5; margin-bottom: 18px">Sponsorship tiers</div><h2 class="rv">Three ways to take part</h2></div>
-<p>Example tiers from Dodgebots 2025. Each event has its own proposal, with tiers set to its budget.</p>
+<div><div class="lb dash" style="color: #A98BF5; margin-bottom: 18px">Annual partnership tiers</div><h2 class="rv">Four ways to take part</h2></div>
+<p>Each tier covers the 2026/2027 academic year and has a fixed number of places, so the benefits stay meaningful.</p>
 </div>
 <div class="tiers">
-<article class="tier top rv"><div class="nm"><span class="lb" style="color: #C9B6FF">Platinum</span><span class="tag">Highest visibility</span></div><div class="pr">RM2,500</div><ul><li>Dedicated feature post and three story mentions on Instagram and LinkedIn</li><li>Standalone bunting, plus the largest top-placed logo on poster, banner, bunting and certificates</li><li>Dedicated sponsor slide and top banner placement at the arena</li><li>Emcee mentions at opening, award and closing ceremonies on both days</li><li>Standalone thank-you post and feature in the highlight video</li><li>Framed certificate and 3D-printed award presented on stage</li><li>Full event photo package</li></ul></article>
-<article class="tier rv"><div class="nm"><span class="lb" style="color: #C9B6FF">Gold</span></div><div class="pr">RM1,800</div><ul><li>One post and two story mentions before the event</li><li>Top-row logo on poster, banner, bunting and certificates</li><li>Side display near the audience area</li><li>Emcee mentions at the ceremonies</li><li>Shared thank-you post and logo in the highlight video</li><li>Framed certificate and 3D-printed award, delivered after the event</li><li>Included in the photo highlight set</li></ul></article>
-<article class="tier rv"><div class="nm"><span class="lb" style="color: #C9B6FF">Silver</span></div><div class="pr">RM1,000</div><ul><li>Inclusion in the collective sponsor appreciation post</li><li>Logo on the bottom row of the bunting</li><li>Logo in the shared sponsor reel on screen</li><li>Emcee mention on competition day</li><li>Framed certificate and thank-you email</li></ul></article>
+<article class="tier top rv"><div class="nm"><span class="lb" style="color: #C9B6FF">Diamond</span><span class="tag">First pick</span></div><div class="pr">RM8,000</div><p class="pl">a year · 1 place</p><ul><li>Names 3 workshops (first pick) and 1 NGO outreach session</li><li>A standalone post each semester, tagged in every workshop post</li><li>Feature article in The Circuit each semester, logo in every issue</li><li>Top row, largest logo on the club T-shirt; standalone bunting at every booth and showcase</li><li>Emcee mention at the start and end of every workshop and event</li><li>Custom 3D-printed plaque, presented on stage</li></ul></article><article class="tier rv"><div class="nm"><span class="lb" style="color: #C9B6FF">Platinum</span></div><div class="pr">RM5,000</div><p class="pl">a year · 2 places</p><ul><li>Names 2 workshops and 1 NGO outreach session</li><li>Two standalone posts a year, tagged in posts for its workshops</li><li>One feature article a year in The Circuit, logo in every issue</li><li>Second row on the T-shirt; top row of the shared bunting</li><li>Emcee mention at its workshops, its outreach session and major events</li><li>3D-printed plaque</li></ul></article><article class="tier rv"><div class="nm"><span class="lb" style="color: #C9B6FF">Gold</span></div><div class="pr">RM2,500</div><p class="pl">a year · 3 places</p><ul><li>Names 1 workshop</li><li>One standalone post a year</li><li>Logo in every issue of The Circuit</li><li>Third row on the T-shirt; middle row of the shared bunting</li><li>Emcee mention at its named workshop</li><li>3D-printed token</li></ul></article><article class="tier rv"><div class="nm"><span class="lb" style="color: #C9B6FF">Silver</span></div><div class="pr">RM1,000</div><p class="pl">a year · 6 places</p><ul><li>A shared post with the other Silver partners</li><li>Listed in the sponsor footer of The Circuit</li><li>Bottom row on the T-shirt and the shared bunting</li><li>Emcee mention at the end of major events</li><li>Framed certificate of appreciation</li></ul></article>
 </div>
+<p class="all rv"><b>Every tier:</b> your logo on the slides of every workshop and on the pit kit banner that travels with our teams to competitions, plus an end-of-semester report three times a year.</p>
 <div class="inkind rv">
-<div><span class="lb" style="color: #C9B6FF">Non-monetary sponsorship</span>
-<p>We also accept components such as microcontrollers, motors and sensors, as well as meals, prizes and equipment. Benefits are agreed with the committee.</p></div>
+<div><span class="lb" style="color: #C9B6FF">In-kind support</span>
+<p>This year we're looking for a 3D printer and electronics components: microcontrollers, sensors, servos and motors. Contributions are valued at retail price and matched to the tier of the same value, and a donated 3D printer carries your name in our lab.</p></div>
 <a class="btn sec" href="#talk">Discuss in-kind support →</a>
 </div>
 </div>
@@ -349,14 +358,14 @@ Sunway Robotics Club</a>
 <!-- ======= HOW IT WORKS ======= -->
 <section class="light">
 <div class="wrap">
-<div class="head"><div><div class="lb dash" style="color: #6A44BE; margin-bottom: 18px">How it works</div><h2 class="rv">From first email to event day</h2></div></div>
+<div class="head"><div><div class="lb dash" style="color: #6A44BE; margin-bottom: 18px">How it works</div><h2 class="rv">From first email to first workshop</h2></div></div>
 <ol class="steps" style="margin: 0; padding: 0">
-<li class="rv"><span class="n">01</span><h3>Request a proposal</h3><p>Tell us which event you'd like to support and we'll send its proposal and budget.</p></li>
-<li class="rv2"><span class="n">02</span><h3>Choose a tier</h3><p>Pick a monetary tier or an in-kind package.</p></li>
-<li class="rv3"><span class="n">03</span><h3>Sign the commitment form</h3><p>Complete the Partnership Commitment Form included with the proposal.</p></li>
-<li class="rv"><span class="n">04</span><h3>Send your logos</h3><p>Coloured and black-and-white versions, PNG, at least 900 × 900 px, by the date in the proposal.</p></li>
+<li class="rv"><span class="n">01</span><h3>Request the proposal</h3><p>Email us and we'll send the full 2026/2027 proposal with every benefit by tier.</p></li>
+<li class="rv2"><span class="n">02</span><h3>Choose a tier</h3><p>Pick a monetary tier or an in-kind package, and the workshops you'd like to name.</p></li>
+<li class="rv3"><span class="n">03</span><h3>Sign the commitment form</h3><p>Sign the form in the proposal and email it back. We'll issue an official invoice.</p></li>
+<li class="rv"><span class="n">04</span><h3>Send your brand assets</h3><p>Logo (AI, SVG or transparent PNG, at least 900 × 900 px), a short company profile and your social links.</p></li>
 </ol>
-<div class="plate rv"><span class="slab">Supported by</span><div class="logos"><div><img src="/_blob/dfb53f4ab5afa546fd6f573e59ef4997" alt="Jeffrey Cheah Foundation" loading="lazy"></div><div><img src="/_blob/39a3ff91dfce64e9fa58a1ab731fce85" alt="Campus with a Conscience" loading="lazy"></div><div><img src="/_blob/16c70f434d40e49313b883be7b2f5761" alt="Sunway College" loading="lazy"></div></div></div>
+<div class="plate rv"><span class="slab">With support from</span><div class="logos"><div><img src="/_blob/dfb53f4ab5afa546fd6f573e59ef4997" alt="Jeffrey Cheah Foundation" loading="lazy"></div><div><img src="/_blob/39a3ff91dfce64e9fa58a1ab731fce85" alt="Campus with a Conscience" loading="lazy"></div><div><img src="/_blob/16c70f434d40e49313b883be7b2f5761" alt="Sunway College" loading="lazy"></div></div></div>
 </div>
 </section>
 
@@ -371,7 +380,7 @@ Sunway Robotics Club</a>
 </div>
 <div class="rows">
 <a class="row" href="mailto:sunwayroboticsclub@gmail.com"><span><small class="lb" style="color: #A9A6AE">Email</small><strong>sunwayroboticsclub@gmail.com</strong></span><span>→</span></a>
-<a class="row" href="tel:+60166217383"><span><small class="lb" style="color: #A9A6AE">Phone / WhatsApp</small><strong>016-621 7383</strong></span><span>→</span></a>
+<a class="row" href="tel:+60166217383"><span><small class="lb" style="color: #A9A6AE">Phone / WhatsApp</small><strong>+60 16-621 7383</strong></span><span>→</span></a>
 <a class="row" href="https://www.linkedin.com/in/sunwayrobotics/"><span><small class="lb" style="color: #A9A6AE">LinkedIn</small><strong>Sunway Robotics Club</strong></span><span>↗</span></a>
 <a class="row" href="https://www.instagram.com/sunwayrobotics/"><span><small class="lb" style="color: #A9A6AE">Instagram</small><strong>@sunwayrobotics</strong></span><span>↗</span></a>
 </div>
