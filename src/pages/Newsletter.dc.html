@@ -176,26 +176,40 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #7852
 .raslide{animation:raslide 16s ease-in-out infinite;transform:translateX(480px)}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
 
-.soon{position:relative;overflow:hidden;background:#0B0B0C;color:#FFFFFF;min-height:calc(100vh - 61px);display:flex;align-items:center}
-.soon .glow{position:absolute;width:900px;height:900px;right:-300px;top:-260px;border-radius:50%;background:radial-gradient(circle,rgba(120,82,193,0.28),rgba(120,82,193,0) 66%);pointer-events:none}
-.soon .glow2{position:absolute;width:700px;height:700px;left:-320px;bottom:-360px;border-radius:50%;background:radial-gradient(circle,rgba(120,82,193,0.16),rgba(120,82,193,0) 66%);pointer-events:none}
-.soon .nlogo{position:absolute;right:max(24px,calc((100vw - 1360px)/2 + 24px));top:50%;transform:translateY(-50%);width:min(30vw,340px);height:auto;opacity:.35}
-.soon .inner{position:relative;z-index:1;width:100%;max-width:1360px;margin:0 auto;padding:96px 24px 110px}
-.soon h1{margin:18px 0 0;font-weight:500;font-size:clamp(56px,9vw,132px);line-height:.95;letter-spacing:-0.03em}
-.soon .chip{display:inline-flex;align-items:center;gap:10px;margin-top:28px;padding:9px 16px;border-radius:999px;background:rgba(169,139,245,0.12);border:1px solid rgba(169,139,245,0.35);color:#DCD0FA;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
-.soon .chip i{width:8px;height:8px;border-radius:50%;background:#A98BF5;box-shadow:0 0 0 0 rgba(169,139,245,.6);animation:pulse 2s ease-out infinite}
+.soon{position:relative;overflow:hidden;background:#0B0B0C;color:#FFFFFF;min-height:calc(100vh - 61px);display:flex;flex-direction:column}
+.soon .glow{position:absolute;width:1000px;height:1000px;right:-320px;top:-380px;border-radius:50%;background:radial-gradient(circle,rgba(120,82,193,0.26),rgba(120,82,193,0) 66%);pointer-events:none}
+.soon .glow2{position:absolute;width:760px;height:760px;left:-340px;bottom:-420px;border-radius:50%;background:radial-gradient(circle,rgba(120,82,193,0.14),rgba(120,82,193,0) 66%);pointer-events:none}
+.soon .inner{position:relative;z-index:1;flex:1 0 auto;display:flex;flex-direction:column;justify-content:center;width:100%;box-sizing:border-box;max-width:1408px;margin:0 auto;padding:80px 24px 72px}
+.soon .row > div{min-width:0;max-width:100%}
+.soon h1{margin:22px 0 0;font-weight:500;font-size:clamp(60px,14.5vw,224px);line-height:.88;letter-spacing:-0.045em}
+.soon h1 span{color:#A98BF5}
+.soon .row{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px 48px;margin-top:40px}
+.soon .chip{display:inline-flex;align-items:center;gap:10px;padding:9px 16px;border-radius:999px;background:rgba(169,139,245,0.12);border:1px solid rgba(169,139,245,0.35);color:#DCD0FA;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.soon .chip i{width:8px;height:8px;border-radius:50%;background:#A98BF5;animation:pulse 2s ease-out infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(169,139,245,.55)}100%{box-shadow:0 0 0 12px rgba(169,139,245,0)}}
-.soon p.lede{margin:28px 0 0;max-width:560px;font-size:clamp(17px,1.5vw,20px);line-height:1.6;color:#B9B6C1}
-.soon .what{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:56px;max-width:860px}
-.soon .what div{padding:20px 22px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08)}
-.soon .what b{display:block;font-weight:600;font-size:16px;margin-bottom:6px;color:#FFFFFF}
-.soon .what span{font-size:14px;line-height:1.5;color:#A9A6AE}
-.soon .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:44px}
+.soon p.lede{margin:18px 0 0;max-width:540px;font-size:clamp(17px,1.4vw,19px);line-height:1.6;color:#B9B6C1}
+.soon .ctas{display:flex;flex-wrap:wrap;gap:12px}
 .soon .cta{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:999px;font-size:15px;font-weight:500;text-decoration:none;transition:background-color .2s,color .2s,border-color .2s}
 .soon .cta.pri{background:#7852C1;color:#FFFFFF}.soon .cta.pri:hover{background:#6A44BE}
 .soon .cta.sec{border:1px solid rgba(255,255,255,0.22);color:#FFFFFF}.soon .cta.sec:hover{border-color:#FFFFFF}
-@media (max-width: 760px){.soon .what{grid-template-columns:minmax(0,1fr)}.soon .nlogo{display:none}.soon .inner{padding:72px 24px 96px}}
-@media (prefers-reduced-motion: reduce){.soon .chip i{animation:none}}
+/* measuring scale */
+.ruler{position:relative;z-index:1;height:46px;overflow:hidden;
+ background:
+  repeating-linear-gradient(90deg,#9C99A6 0 1px,transparent 1px 100px) left bottom/100% 24px no-repeat,
+  repeating-linear-gradient(90deg,#5E5B68 0 1px,transparent 1px 50px) left bottom/100% 15px no-repeat,
+  repeating-linear-gradient(90deg,#3A3842 0 1px,transparent 1px 10px) left bottom/100% 8px no-repeat}
+.ruler span{position:absolute;bottom:27px;transform:translateX(5px);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.04em;color:#7E7B88}
+.ruler .cur{position:absolute;bottom:0;width:2px;height:30px;background:#A98BF5;box-shadow:0 0 12px rgba(169,139,245,.8);animation:scan 9s ease-in-out infinite alternate}
+.ruler .cur::before{content:"";position:absolute;top:-6px;left:-4px;border:5px solid transparent;border-top:6px solid #A98BF5}
+@keyframes scan{from{left:6%}to{left:92%}}
+/* moving words */
+.strip{position:relative;z-index:1;overflow:hidden;border-top:1px solid #2A2A2E;background:#0B0B0C}
+.strip .track2{display:flex;width:max-content;animation:nlmq 38s linear infinite}
+.strip .grp{display:flex;align-items:center;gap:30px;padding:16px 15px;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#8E8C95;white-space:nowrap}
+.strip .grp b{color:#FFFFFF;font-weight:600}.strip .grp em{font-style:normal;color:#7852C1}
+@keyframes nlmq{to{transform:translateX(-50%)}}
+@media (max-width: 760px){.soon .inner{padding:64px 24px 56px}.soon .row{margin-top:28px}}
+@media (prefers-reduced-motion: reduce){.soon .chip i,.ruler .cur,.strip .track2{animation:none}}
 </style>
 </helmet>
 <div class="paper" style="font-family: 'Instrument Sans', system-ui, sans-serif; color: #0B0B0C; font-size: 17px; line-height: 1.55; overflow-x: clip">
@@ -226,22 +240,22 @@ Sunway Robotics Club</a>
 <!-- ======= THE CIRCUIT: COMING SOON ======= -->
 <main id="top" class="soon">
 <div class="glow" aria-hidden="true"></div><div class="glow2" aria-hidden="true"></div>
-<svg viewBox="28 29 190 277" aria-hidden="true" class="nlogo"><rect x="32" y="33" width="182" height="269" fill="none" stroke="#A98BF5" stroke-width="3"></rect><polygon points="90,64 156,64 156,136 90,136" fill="none" stroke="#A98BF5" stroke-width="2"></polygon><polygon points="65,162 183,162 183,242" fill="none" stroke="#A98BF5" stroke-width="2"></polygon><polygon points="65,204 65,282 182,282" fill="none" stroke="#A98BF5" stroke-width="2"></polygon></svg>
 <div class="inner">
-<div class="lb dash" style="color: #A98BF5">The Circuit · Newsletter</div>
-<h1>Coming soon.</h1>
-<div class="chip"><i aria-hidden="true"></i>First issue in the works</div>
-<p class="lede">The Circuit is the Sunway Robotics Club newsletter: what members are building, what's coming up, and opportunities worth applying for, all in one short read.</p>
-<div class="what">
-<div><b>From the lab</b><span>Builds, workshops and the people behind them.</span></div>
-<div><b>Coming up</b><span>Events and competitions to put in your calendar.</span></div>
-<div><b>Opportunities</b><span>Programmes, roles and calls worth applying for.</span></div>
+<div class="lb dash" style="color: #A98BF5">Sunway Robotics Club newsletter</div>
+<h1>The <span>Circuit</span></h1>
+<div class="row">
+<div>
+<div class="chip"><i aria-hidden="true"></i>Coming soon</div>
+<p class="lede">What members are building, what's coming up, and opportunities worth applying for, all in one short read. The first issue is in the works.</p>
 </div>
 <div class="ctas">
 <a class="cta pri" href="https://www.instagram.com/sunwayrobotics/">Follow us for the launch ↗</a>
 <a class="cta sec" href="Main.dc.html">Back to home</a>
 </div>
 </div>
+</div>
+<div class="ruler" aria-hidden="true"><span style="left: 0px">0</span><span style="left: 100px">10</span><span style="left: 200px">20</span><span style="left: 300px">30</span><span style="left: 400px">40</span><span style="left: 500px">50</span><span style="left: 600px">60</span><span style="left: 700px">70</span><span style="left: 800px">80</span><span style="left: 900px">90</span><span style="left: 1000px">100</span><span style="left: 1100px">110</span><span style="left: 1200px">120</span><span style="left: 1300px">130</span><span style="left: 1400px">140</span><span style="left: 1500px">150</span><span style="left: 1600px">160</span><span style="left: 1700px">170</span><span style="left: 1800px">180</span><span style="left: 1900px">190</span><span style="left: 2000px">200</span><span style="left: 2100px">210</span><span style="left: 2200px">220</span><span style="left: 2300px">230</span><span style="left: 2400px">240</span><span style="left: 2500px">250</span><span style="left: 2600px">260</span><span style="left: 2700px">270</span><span style="left: 2800px">280</span><span style="left: 2900px">290</span><span style="left: 3000px">300</span><span style="left: 3100px">310</span><span style="left: 3200px">320</span><span style="left: 3300px">330</span><span style="left: 3400px">340</span><span style="left: 3500px">350</span><span style="left: 3600px">360</span><span style="left: 3700px">370</span><span style="left: 3800px">380</span><span style="left: 3900px">390</span><i class="cur"></i></div>
+<div class="strip" aria-hidden="true"><div class="track2"><div class="grp"><b>Coming soon</b><em>/</em>From the lab<em>/</em>Builds &amp; workshops<em>/</em>Coming up<em>/</em>Events &amp; competitions<em>/</em>Opportunities<em>/</em>First issue in the works<em>/</em></div><div class="grp"><b>Coming soon</b><em>/</em>From the lab<em>/</em>Builds &amp; workshops<em>/</em>Coming up<em>/</em>Events &amp; competitions<em>/</em>Opportunities<em>/</em>First issue in the works<em>/</em></div></div></div>
 </main>
 
 <footer id="contact" style="background: #0B0B0C; color: #FFFFFF; padding: 80px 0 28px; border-top: 1px solid #2A2A2E">
