@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Circuit — SRC weekly newsletter</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..600&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#0A0A0C}
+a{color:#5A3A9E}a:hover{color:#3E2575}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #A98BF5;outline-offset:3px}
+.mono{font-family:'Geist Mono',ui-monospace,monospace}
+.sk{stop-color:#24163F}.sv{stop-color:#A98BF5}
+.dk{background-color:#0A0A0C;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:80px 80px}
+.lt{background-color:#F4F3F6;background-image:linear-gradient(#E6E3EC 1px,transparent 1px),linear-gradient(90deg,#E6E3EC 1px,transparent 1px);background-size:80px 80px}
+.vi{background-color:#24163F;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:80px 80px}
+.phl{background-color:#E7E4EC;background-image:linear-gradient(to bottom right,transparent calc(50% - .5px),#D2CEDA,transparent calc(50% + .5px)),linear-gradient(to top right,transparent calc(50% - .5px),#D2CEDA,transparent calc(50% + .5px))}
+.ticks{background-image:repeating-linear-gradient(90deg,#3A3842 0 1px,transparent 1px 10px);height:8px}
+@media (max-width: 760px){.navlinks{display:none !important}.menubtn{display:inline-flex !important}}
+@media (min-width: 761px){.mnav{display:none !important}}
+.btn{transition:background-color .25s,color .25s,border-color .25s}
+.btn .arr{display:inline-block;transition:transform .3s ease}
+.btn:hover .arr{transform:translateX(5px)}
+.bv:hover{background-color:#5A3A9E !important}
+.nl{transition:color .2s}.nl:hover{color:#FFFFFF !important}
+.toc a{transition:color .2s,padding-left .25s}
+.toc a:hover{color:#5A3A9E !important;padding-left:6px}
+.card{transition:border-color .4s}
+.card:hover{border-color:#7852C1 !important}
+.card .zoom{transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.card:hover .zoom{transform:scale(1.04)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.mq{animation:mq 36s linear infinite}
+@keyframes blink{50%{opacity:.2}}
+.blink{animation:blink 1.4s steps(1) infinite}
+@keyframes rv{from{opacity:0;transform:translateY(40px)}}
+@keyframes wipe{from{clip-path:inset(0 0 100% 0);transform:translateY(30%)}}
+@keyframes growx{from{transform:scaleX(0)}}
+@keyframes par{from{transform:translateY(-8%) scale(1.1)}to{transform:translateY(8%) scale(1.1)}}
+@supports (animation-timeline: view()){
+.rv{animation:rv linear both;animation-timeline:view();animation-range:entry 0% cover 25%}
+.rv2{animation:rv linear both;animation-timeline:view();animation-range:entry 10% cover 33%}
+.rv3{animation:rv linear both;animation-timeline:view();animation-range:entry 20% cover 41%}
+.wipe{animation:wipe linear both;animation-timeline:view();animation-range:entry 5% cover 28%}
+.fx{transform-origin:left;animation:growx linear both;animation-timeline:view();animation-range:entry 20% cover 50%}
+.par{animation:par linear both;animation-timeline:view()}
+.prog{transform-origin:left;animation:growx linear both;animation-timeline:scroll(root)}
+}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
+</style>
+</helmet>
+<div style="font-family: 'Geist', system-ui, sans-serif; color: #0A0A0C; background-color: #F4F3F6; font-size: 17px; line-height: 1.65">
+
+<!-- HEADER -->
+<header style="position: sticky; top: 0; z-index: 50; background: rgba(10, 10, 12, 0.86); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid #26242C; color: #FFFFFF">
+<nav aria-label="Main" style="max-width: 1280px; margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 24px">
+<a href="Main.dc.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #FFFFFF">
+<svg viewBox="28 29 190 277" aria-hidden="true" style="width: 19px; height: 28px; display: block">
+<defs><linearGradient id="bSq" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="sk"></stop><stop offset="1" class="sv"></stop></linearGradient><linearGradient id="bLo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="sv"></stop><stop offset="1" class="sk"></stop></linearGradient></defs>
+<rect x="32" y="33" width="182" height="269" fill="none" stroke="#A98BF5" stroke-width="8"></rect>
+<polygon points="90,64 156,64 156,136 90,136" fill="url(#bSq)"></polygon>
+<polygon points="65,162 183,162 183,242" fill="url(#bLo)"></polygon>
+<polygon points="65,204 65,282 182,282" fill="url(#bLo)"></polygon>
+</svg>
+<span style="font-weight: 500; font-size: 15px; letter-spacing: -0.01em">Sunway Robotics Club</span>
+</a>
+<div class="navlinks" style="display: flex; align-items: center; gap: 28px; font-size: 14px">
+<a href="Main.dc.html" class="nl" style="color: #A9A6B2; text-decoration: none">Home</a>
+<a href="#archive" class="nl" style="color: #A9A6B2; text-decoration: none">Archive</a>
+<a href="#subscribe" class="nl" style="color: #A9A6B2; text-decoration: none">Subscribe</a>
+<a href="https://www.instagram.com/sunwayrobotics/" style="color: #A98BF5; text-decoration: none; padding-left: 20px; border-left: 1px solid #26242C">Instagram ↗</a>
+</div>
+<button type="button" class="menubtn" aria-label="{{ menuAria }}" onClick="{{ toggleMenu }}" aria-expanded="{{ menuExpanded }}" aria-controls="mnav" style="display: none; align-items: center; justify-content: center; width: 44px; height: 40px; padding: 0; border: 1px solid #3A3842; background: transparent; color: #FFFFFF; cursor: pointer"><sc-if value="{{ menuClosed }}" hint-placeholder-val="{{ true }}"><svg width="22" height="14" viewBox="0 0 22 14" aria-hidden="true" style="display: block"><path d="M0 1H22M0 7H22M0 13H22" stroke="currentColor" stroke-width="1.6" fill="none"></path></svg></sc-if><sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" style="display: block"><path d="M1 1L17 17M17 1L1 17" stroke="currentColor" stroke-width="1.6" fill="none"></path></svg></sc-if></button>
+</nav>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+<div id="mnav" class="mnav" style="border-top: 1px solid #26242C; padding: 8px 24px 20px; display: flex; flex-direction: column">
+<a href="Main.dc.html" style="color: #FFFFFF; text-decoration: none; padding: 14px 0; border-bottom: 1px solid #1C1B21; font-size: 20px; font-weight: 300">Home</a>
+<a href="#archive" onClick="{{ closeMenu }}" style="color: #FFFFFF; text-decoration: none; padding: 14px 0; border-bottom: 1px solid #1C1B21; font-size: 20px; font-weight: 300">Archive</a>
+<a href="#subscribe" onClick="{{ closeMenu }}" style="color: #FFFFFF; text-decoration: none; padding: 14px 0; border-bottom: 1px solid #1C1B21; font-size: 20px; font-weight: 300">Subscribe</a>
+<a href="https://www.instagram.com/sunwayrobotics/" style="color: #A98BF5; text-decoration: none; padding: 14px 0; font-size: 20px; font-weight: 300">Instagram ↗</a>
+</div>
+</sc-if>
+<div class="prog" aria-hidden="true" style="height: 1px; background: #7852C1"></div>
+</header>
+
+<!-- MASTHEAD -->
+<section class="dk" style="color: #FFFFFF; padding: 64px 0 0; border-bottom: 1px solid #26242C">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 24px">
+<div class="mono" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 11px; letter-spacing: 0.12em; color: #8C8A94; padding-bottom: 16px; border-bottom: 1px solid #26242C">
+<span style="display: flex; align-items: center; gap: 10px"><span class="blink" style="width: 6px; height: 6px; background: #A98BF5; display: inline-block"></span>ISSUE 01 · WEEK 42 · OCTOBER 2026</span>
+<span>WEEKLY · FOR SRC MEMBERS · 5 MIN READ</span>
+</div>
+<h1 style="margin: 40px 0 0; font-weight: 300; font-size: clamp(76px, 15vw, 236px); line-height: 0.84; letter-spacing: -0.06em">
+<span class="wipe" style="display: block">The <span style="color: #A98BF5">Circuit</span></span>
+</h1>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin: 36px 0 48px">
+<p class="rv" style="margin: 0; max-width: 560px; font-size: 19px; color: #C2C0CA; font-weight: 300">Weekly notes from Sunway Robotics Club: what members are building, what's coming up and what's worth applying for.</p>
+<span class="mono rv" style="font-size: 11px; letter-spacing: 0.12em; color: #8C8A94">EDITED BY [EDITOR NAME]</span>
+</div>
+<div class="ticks" aria-hidden="true"></div>
+</div>
+<div aria-hidden="true" style="margin-top: 0; border-top: 1px solid #26242C; overflow: hidden">
+<div class="mq mono" style="display: flex; width: max-content; gap: 36px; padding: 14px 0; font-size: 12px; letter-spacing: 0.16em; color: #6E6B78; white-space: nowrap">
+<span style="color: #FFFFFF">IN THIS ISSUE</span><span style="color: #7852C1">/</span><span>BUILD OF THE WEEK</span><span style="color: #7852C1">/</span><span>THIS WEEK IN 60 SECONDS</span><span style="color: #7852C1">/</span><span>ROBOCON DIARY</span><span style="color: #7852C1">/</span><span>MEMBER SPOTLIGHT</span><span style="color: #7852C1">/</span><span>UP NEXT</span><span style="color: #7852C1">/</span><span>OPPORTUNITIES</span><span style="color: #7852C1">/</span>
+<span style="color: #FFFFFF">IN THIS ISSUE</span><span style="color: #7852C1">/</span><span>BUILD OF THE WEEK</span><span style="color: #7852C1">/</span><span>THIS WEEK IN 60 SECONDS</span><span style="color: #7852C1">/</span><span>ROBOCON DIARY</span><span style="color: #7852C1">/</span><span>MEMBER SPOTLIGHT</span><span style="color: #7852C1">/</span><span>UP NEXT</span><span style="color: #7852C1">/</span><span>OPPORTUNITIES</span><span style="color: #7852C1">/</span>
+</div>
+</div>
+</section>
+
+<!-- BODY -->
+<div class="lt">
+<div style="max-width: 1280px; margin: 0 auto; padding: 96px 24px 0; display: flex; flex-wrap: wrap; gap: 48px 72px; align-items: flex-start">
+
+<aside style="flex: 1 1 220px; position: sticky; top: 92px">
+<nav class="toc mono" aria-label="In this issue" style="display: flex; flex-direction: column; font-size: 11px; letter-spacing: 0.1em; border-top: 1px solid #0A0A0C">
+<span style="color: #5A3A9E; padding: 12px 0; border-bottom: 1px solid #CFCAD8">CONTENTS</span>
+<a href="#lead" style="color: #3A3842; text-decoration: none; padding: 12px 0; border-bottom: 1px solid #CFCAD8">01 — BUILD OF THE WEEK</a>
+<a href="#sixty" style="color: #3A3842; text-decoration: none; padding: 12px 0; border-bottom: 1px solid #CFCAD8">02 — THIS WEEK IN 60 SECONDS</a>
+<a href="#robocon" style="color: #3A3842; text-decoration: none; padding: 12px 0; border-bottom: 1px solid #CFCAD8">03 — ROBOCON DIARY</a>
+<a href="#spotlight" style="color: #3A3842; text-decoration: none; padding: 12px 0; border-bottom: 1px solid #CFCAD8">04 — MEMBER SPOTLIGHT</a>
+<a href="#next" style="color: #3A3842; text-decoration: none; padding: 12px 0; border-bottom: 1px solid #CFCAD8">05 — UP NEXT</a>
+<a href="#opps" style="color: #3A3842; text-decoration: none; padding: 12px 0; border-bottom: 1px solid #CFCAD8">06 — OPPORTUNITIES</a>
+</nav>
+</aside>
+
+<main style="flex: 999 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 120px">
+
+<!-- 01 BUILD OF THE WEEK -->
+<article id="lead">
+<div class="mono rv" style="display: flex; align-items: center; gap: 16px; font-size: 11px; letter-spacing: 0.14em; color: #5E5B66; margin-bottom: 28px"><span>01 / BUILD OF THE WEEK</span><span class="fx" style="flex: 1 1 auto; height: 1px; background: #BDB8C6"></span></div>
+<h2 style="margin: 0 0 32px; font-weight: 300; font-size: clamp(44px, 5vw, 80px); line-height: 0.98; letter-spacing: -0.045em">
+<span class="wipe" style="display: block">The desk</span>
+<span class="wipe" style="display: block; color: #5A3A9E">companion.</span>
+</h2>
+<div class="card" style="position: relative; height: 500px; overflow: hidden; border: 1px solid #CFCAD8; margin-bottom: 32px">
+<div class="par zoom phl" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center"><span class="mono" style="font-size: 11px; letter-spacing: 0.1em; color: #5A3A9E; background: #FFFFFF; padding: 5px 9px">[PHOTO: DESK PET]</span></div>
+<span class="mono" style="position: absolute; left: 0; top: 0; font-size: 10px; letter-spacing: 0.12em; background: #0A0A0C; color: #FFFFFF; padding: 7px 10px">FIG. 01</span>
+</div>
+<div class="rv" style="display: flex; flex-wrap: wrap; gap: 24px 48px">
+<p style="flex: 2 1 380px; margin: 0; font-size: 19px; color: #2A2830; font-weight: 300">This week's featured build is a small robot that lives on your desk. It shows expressions on a tiny screen and reacts when you touch its head, and its 3D-printed shell, cat ears included, was designed from scratch.</p>
+<div style="flex: 1 1 220px; border-top: 1px solid #0A0A0C">
+<div class="mono" style="font-size: 11px; letter-spacing: 0.12em; color: #5E5B66; padding: 12px 0">INSIDE</div>
+<ul class="mono" style="list-style: none; margin: 0; padding: 0; font-size: 12px; letter-spacing: 0.06em">
+<li style="padding: 10px 0; border-top: 1px solid #CFCAD8">ESP32 MICROCONTROLLER</li>
+<li style="padding: 10px 0; border-top: 1px solid #CFCAD8">OLED DISPLAY</li>
+<li style="padding: 10px 0; border-top: 1px solid #CFCAD8">TOUCH SENSOR</li>
+<li style="padding: 10px 0; border-top: 1px solid #CFCAD8; border-bottom: 1px solid #CFCAD8">3D-PRINTED SHELL</li>
+</ul>
+</div>
+</div>
+<p class="rv mono" style="margin: 28px 0 0; font-size: 12px; letter-spacing: 0.08em; color: #3A3842">BUILT SOMETHING? TAG <a href="https://www.instagram.com/sunwayrobotics/" style="text-decoration: none">@SUNWAYROBOTICS</a> TO BE FEATURED.</p>
+</article>
+
+<!-- 02 SIXTY SECONDS -->
+<section id="sixty" aria-labelledby="sixty-h">
+<div class="mono rv" style="display: flex; align-items: center; gap: 16px; font-size: 11px; letter-spacing: 0.14em; color: #5E5B66; margin-bottom: 28px"><span>02 / THIS WEEK IN 60 SECONDS</span><span class="fx" style="flex: 1 1 auto; height: 1px; background: #BDB8C6"></span></div>
+<h2 id="sixty-h" class="wipe" style="margin: 0 0 28px; font-weight: 300; font-size: clamp(34px, 3.4vw, 52px); letter-spacing: -0.035em; line-height: 1.05">Quick hits</h2>
+<ol style="list-style: none; margin: 0; padding: 0; border-top: 1px solid #0A0A0C">
+<li class="rv" style="display: flex; flex-wrap: wrap; gap: 6px 24px; padding: 18px 0; border-bottom: 1px solid #CFCAD8"><span class="mono" style="flex: 0 0 110px; font-size: 12px; letter-spacing: 0.08em; color: #5A3A9E">1–2 OCT</span><span style="flex: 1 1 300px">CnS Week booth done. To everyone who signed up there: welcome.</span></li>
+<li class="rv" style="display: flex; flex-wrap: wrap; gap: 6px 24px; padding: 18px 0; border-bottom: 1px solid #CFCAD8"><span class="mono" style="flex: 0 0 110px; font-size: 12px; letter-spacing: 0.08em; color: #5A3A9E">5–9 OCT</span><span style="flex: 1 1 300px">ECX Week booth, with the Servo Arm and Ottobot workshops.</span></li>
+<li class="rv" style="display: flex; flex-wrap: wrap; gap: 6px 24px; padding: 18px 0; border-bottom: 1px solid #CFCAD8"><span class="mono" style="flex: 0 0 110px; font-size: 12px; letter-spacing: 0.08em; color: #5A3A9E">ONGOING</span><span style="flex: 1 1 300px">Sunway's Robocon 2027 team, supported by SRC, is designing two robots. See the diary below.</span></li>
+<li class="rv" style="display: flex; flex-wrap: wrap; gap: 6px 24px; padding: 18px 0; border-bottom: 1px solid #CFCAD8"><span class="mono" style="flex: 0 0 110px; font-size: 12px; letter-spacing: 0.08em; color: #5A3A9E">NOV</span><span style="flex: 1 1 300px">Welcoming party for new members. [DATE · VENUE]</span></li>
+</ol>
+</section>
+
+<!-- 03 ROBOCON DIARY -->
+<section id="robocon" aria-labelledby="robo-h" class="vi rv" style="color: #FFFFFF; padding: 44px; border: 1px solid #3E2575">
+<div class="mono" style="display: flex; justify-content: space-between; gap: 12px; font-size: 11px; letter-spacing: 0.14em; color: #C9B6FF; margin-bottom: 28px"><span>03 / ROBOCON DIARY</span><span>SOLO, INDONESIA</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 32px 56px; align-items: flex-end">
+<div style="flex: 1 1 240px; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 16px">
+<div style="font-size: clamp(88px, 10vw, 156px); font-weight: 300; letter-spacing: -0.06em; line-height: 0.85">{{ daysLeft }}</div>
+<div class="mono" style="font-size: 11px; letter-spacing: 0.12em; color: #FFFFFF; margin-top: 14px">DAYS TO ABU ROBOCON 2027</div>
+</div>
+<div style="flex: 2 1 340px; display: flex; flex-direction: column; gap: 14px">
+<h2 id="robo-h" style="margin: 0; font-weight: 300; font-size: clamp(28px, 2.8vw, 40px); letter-spacing: -0.03em; line-height: 1.1">The Pursuit of <span style="color: #C9B6FF">Mustika Nusantara</span></h2>
+<p style="margin: 0; color: #DCD2F5; font-weight: 300">29 August 2027. Sunway University's team, which SRC supports, is building two robots. This week: [TEAM UPDATE].</p>
+<div class="mono" style="display: flex; flex-wrap: wrap; gap: 0; font-size: 10px; letter-spacing: 0.1em; border: 1px solid rgba(255,255,255,0.3); align-self: flex-start">
+<span style="padding: 8px 12px; border-right: 1px solid rgba(255,255,255,0.3)">ROBOT 1 · [STATUS]</span>
+<span style="padding: 8px 12px; border-right: 1px solid rgba(255,255,255,0.3)">ROBOT 2 · [STATUS]</span>
+<span style="padding: 8px 12px; background: #FFFFFF; color: #24163F">LOOKING FOR: [ROLES]</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 04 SPOTLIGHT -->
+<section id="spotlight" aria-labelledby="spot-h">
+<div class="mono rv" style="display: flex; align-items: center; gap: 16px; font-size: 11px; letter-spacing: 0.14em; color: #5E5B66; margin-bottom: 28px"><span>04 / MEMBER SPOTLIGHT</span><span class="fx" style="flex: 1 1 auto; height: 1px; background: #BDB8C6"></span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: stretch">
+<div class="phl rv" style="flex: 0 0 200px; height: 240px; border: 1px solid #CFCAD8; display: flex; align-items: center; justify-content: center"><span class="mono" style="font-size: 10px; letter-spacing: 0.1em; color: #5A3A9E; background: #FFFFFF; padding: 5px 9px">[PORTRAIT]</span></div>
+<div class="rv2" style="flex: 1 1 360px; display: flex; flex-direction: column; justify-content: space-between; gap: 20px; border-top: 1px solid #0A0A0C; padding-top: 16px">
+<p id="spot-h" style="margin: 0; font-size: clamp(26px, 2.6vw, 38px); line-height: 1.2; font-weight: 300; letter-spacing: -0.02em">“[A QUOTE FROM THE MEMBER ABOUT WHAT THEY BUILT OR LEARNED.]”</p>
+<div class="mono" style="font-size: 11px; letter-spacing: 0.1em; color: #5E5B66">[MEMBER NAME] · [COURSE, YEAR] · [WHAT THEY'RE BUILDING]</div>
+</div>
+</div>
+</section>
+
+<!-- 05 UP NEXT -->
+<section id="next" aria-labelledby="next-h">
+<div class="mono rv" style="display: flex; align-items: center; gap: 16px; font-size: 11px; letter-spacing: 0.14em; color: #5E5B66; margin-bottom: 28px"><span>05 / UP NEXT</span><span class="fx" style="flex: 1 1 auto; height: 1px; background: #BDB8C6"></span></div>
+<h2 id="next-h" class="wipe" style="margin: 0 0 28px; font-weight: 300; font-size: clamp(34px, 3.4vw, 52px); letter-spacing: -0.035em; line-height: 1.05">Put these in your calendar</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); border-left: 1px solid #CFCAD8; border-top: 1px solid #0A0A0C">
+<div class="card rv" style="border-right: 1px solid #CFCAD8; border-bottom: 1px solid #CFCAD8; padding: 24px; background: #FFFFFF">
+<div class="mono" style="font-size: 11px; letter-spacing: 0.1em; color: #5A3A9E">NOV · [DATE]</div>
+<h3 style="margin: 10px 0 6px; font-size: 22px; font-weight: 400; letter-spacing: -0.02em">Welcoming party</h3>
+<p style="margin: 0; color: #4A4752; font-size: 15px">Members only. [VENUE]</p>
+</div>
+<div class="card rv2" style="border-right: 1px solid #CFCAD8; border-bottom: 1px solid #CFCAD8; padding: 24px; background: #FFFFFF">
+<div class="mono" style="font-size: 11px; letter-spacing: 0.1em; color: #5A3A9E">DEC · [DATE]</div>
+<h3 style="margin: 10px 0 6px; font-size: 22px; font-weight: 400; letter-spacing: -0.02em">Boulevard Week booth</h3>
+<p style="margin: 0; color: #4A4752; font-size: 15px">New member projects on show. [DETAILS]</p>
+</div>
+<div class="card rv3" style="border-right: 1px solid #CFCAD8; border-bottom: 1px solid #CFCAD8; padding: 24px; background: #FFFFFF">
+<div class="mono" style="font-size: 11px; letter-spacing: 0.1em; color: #5A3A9E">[DATE]</div>
+<h3 style="margin: 10px 0 6px; font-size: 22px; font-weight: 400; letter-spacing: -0.02em">[COMPETITION NAME]</h3>
+<p style="margin: 0; color: #4A4752; font-size: 15px">Committee members compete in combat robotics. [VENUE]</p>
+</div>
+</div>
+</section>
+
+<!-- 06 OPPORTUNITIES -->
+<section id="opps" aria-labelledby="opps-h" style="padding-bottom: 40px">
+<div class="mono rv" style="display: flex; align-items: center; gap: 16px; font-size: 11px; letter-spacing: 0.14em; color: #5E5B66; margin-bottom: 28px"><span>06 / OPPORTUNITIES</span><span class="fx" style="flex: 1 1 auto; height: 1px; background: #BDB8C6"></span></div>
+<h2 id="opps-h" class="wipe" style="margin: 0 0 28px; font-weight: 300; font-size: clamp(34px, 3.4vw, 52px); letter-spacing: -0.035em; line-height: 1.05">Worth applying for</h2>
+<ul style="list-style: none; margin: 0; padding: 0; border-top: 1px solid #0A0A0C">
+<li class="rv" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; padding: 20px 0; border-bottom: 1px solid #CFCAD8"><span style="font-weight: 500">[COMPETITION NAME]</span><span class="mono" style="font-size: 11px; letter-spacing: 0.08em; color: #5E5B66">DEADLINE [DATE] · <a href="[LINK]">DETAILS ↗</a></span></li>
+<li class="rv" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; padding: 20px 0; border-bottom: 1px solid #CFCAD8"><span style="font-weight: 500">[INTERNSHIP / COMPANY]</span><span class="mono" style="font-size: 11px; letter-spacing: 0.08em; color: #5E5B66">DEADLINE [DATE] · <a href="[LINK]">DETAILS ↗</a></span></li>
+<li class="rv" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; padding: 20px 0; border-bottom: 1px solid #CFCAD8"><span style="font-weight: 500">SRC committee: [OPEN ROLE]</span><span class="mono" style="font-size: 11px; letter-spacing: 0.08em; color: #5E5B66">APPLY BY [DATE] · <a href="[LINK]">FORM ↗</a></span></li>
+</ul>
+</section>
+
+</main>
+</div>
+
+<!-- ARCHIVE -->
+<section id="archive" style="padding: 100px 0 120px">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 24px">
+<div class="mono rv" style="display: flex; align-items: center; gap: 16px; font-size: 11px; letter-spacing: 0.14em; color: #5E5B66; margin-bottom: 28px"><span>ARCHIVE</span><span class="fx" style="flex: 1 1 auto; height: 1px; background: #BDB8C6"></span></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px">
+<a href="#lead" class="card rv" style="text-decoration: none; color: #0A0A0C; border: 1px solid #7852C1; background: #FFFFFF">
+<div style="height: 150px; overflow: hidden; border-bottom: 1px solid #CFCAD8"><div class="zoom phl" style="height: 100%"></div></div>
+<div style="padding: 18px"><div class="mono" style="font-size: 11px; letter-spacing: 0.1em; color: #5A3A9E">ISSUE 01 · WEEK 42 · THIS ISSUE</div><div style="font-weight: 400; font-size: 20px; margin-top: 6px; letter-spacing: -0.01em">Build of the week: the desk companion</div></div>
+</a>
+<div class="rv2" style="border: 1px dashed #BDB8C6; display: flex; flex-direction: column; justify-content: flex-end; padding: 18px; min-height: 230px">
+<div class="mono" style="font-size: 11px; letter-spacing: 0.1em; color: #5E5B66">ISSUE 02 · WEEK 43</div><div style="font-size: 20px; margin-top: 6px; color: #5E5B66">Out next week</div>
+</div>
+<div class="rv3" style="border: 1px dashed #BDB8C6; display: flex; flex-direction: column; justify-content: flex-end; padding: 18px; min-height: 230px">
+<div class="mono" style="font-size: 11px; letter-spacing: 0.1em; color: #5E5B66">ISSUE 03 · WEEK 44</div><div style="font-size: 20px; margin-top: 6px; color: #5E5B66">In two weeks</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<!-- SUBSCRIBE -->
+<section id="subscribe" class="dk" style="color: #FFFFFF; padding: 110px 0; border-top: 1px solid #26242C">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 40px 64px; align-items: flex-end; justify-content: space-between">
+<div class="rv" style="flex: 1 1 400px">
+<div class="mono" style="font-size: 11px; letter-spacing: 0.14em; color: #A98BF5; margin-bottom: 16px">SUBSCRIBE</div>
+<h2 style="margin: 0 0 12px; font-weight: 300; font-size: clamp(40px, 4.4vw, 68px); letter-spacing: -0.045em; line-height: 0.98">Get <span style="color: #A98BF5">The Circuit</span> every week.</h2>
+<p style="margin: 0; color: #C2C0CA; font-weight: 300">For SRC members, sent to your Sunway email.</p>
+</div>
+<sc-if value="{{ notDone }}" hint-placeholder-val="{{ true }}">
+<form class="rv2" onSubmit="{{ submit }}" aria-label="Subscribe to The Circuit" style="flex: 1 1 440px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0; border: 1px solid #3A3842">
+<div style="display: flex; flex-direction: column; border-right: 1px solid #3A3842">
+<label for="sub-email" class="mono" style="font-size: 10px; letter-spacing: 0.12em; color: #8C8A94; padding: 12px 16px 0">SUNWAY EMAIL</label>
+<input id="sub-email" type="email" placeholder="you@imail.sunway.edu.my" style="min-height: 48px; padding: 0 16px; border: 0; background: transparent; color: #FFFFFF; font: inherit; font-size: 16px">
+</div>
+<div style="display: flex; flex-direction: column">
+<label for="sub-id" class="mono" style="font-size: 10px; letter-spacing: 0.12em; color: #8C8A94; padding: 12px 16px 0">STUDENT ID</label>
+<input id="sub-id" type="text" inputmode="numeric" placeholder="e.g. 24103202" style="min-height: 48px; padding: 0 16px; border: 0; background: transparent; color: #FFFFFF; font: inherit; font-size: 16px">
+</div>
+<button type="submit" class="btn bv" style="grid-column: 1 / -1; min-height: 56px; border: 0; background: #7852C1; color: #FFFFFF; font: inherit; font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 0 20px">Subscribe <span class="arr">→</span></button>
+</form>
+</sc-if>
+<sc-if value="{{ done }}" hint-placeholder-val="{{ false }}">
+<div role="status" style="flex: 1 1 440px; display: flex; align-items: center; gap: 16px; border: 1px solid #A98BF5; padding: 24px">
+<span class="blink" style="width: 8px; height: 8px; background: #A98BF5; display: inline-block; flex: 0 0 auto"></span>
+<span>You're on the list. Issue 02 arrives next week.</span>
+</div>
+</sc-if>
+</div>
+</section>
+
+<footer class="dk" style="color: #8C8A94; border-top: 1px solid #26242C; padding: 32px 0">
+<div class="mono" style="max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 11px; letter-spacing: 0.1em">
+<span>© 2026 SUNWAY ROBOTICS CLUB · THE CIRCUIT</span>
+<span style="display: flex; gap: 24px"><a href="https://www.instagram.com/sunwayrobotics/" class="nl" style="color: #E9E7EE; text-decoration: none">INSTAGRAM ↗</a><a href="https://www.linkedin.com/in/sunwayrobotics/" class="nl" style="color: #E9E7EE; text-decoration: none">LINKEDIN ↗</a><a href="Main.dc.html" class="nl" style="color: #E9E7EE; text-decoration: none">HOME →</a></span>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5800}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { done: false, menu: false };
+  }
+  renderVals() {
+    const target = new Date('2027-08-29T00:00:00+08:00').getTime();
+    const days = Math.max(0, Math.ceil((target - Date.now()) / 86400000));
+    const menu = this.state.menu;
+    return {
+      daysLeft: String(days),
+      done: this.state.done,
+      notDone: !this.state.done,
+      submit: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ done: true }); },
+      menuOpen: menu,
+      menuClosed: !menu,
+      menuAria: menu ? 'Close menu' : 'Open menu',
+      menuExpanded: menu ? 'true' : 'false',
+      menuLabel: menu ? 'CLOSE' : 'MENU',
+      toggleMenu: () => this.setState({ menu: !menu }),
+      closeMenu: () => this.setState({ menu: false })
+    };
+  }
+}
+</script>
+</body>
+</html>
