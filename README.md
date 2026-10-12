@@ -9,9 +9,7 @@ src/build/     export + photo grading scripts
 src/render/    Blender scripts for the hero animation
 ```
 
-## Deploying (Cloudflare Pages)
+## Deploying (Cloudflare Workers)
 
-1. Cloudflare dashboard → Workers & Pages → Create → Pages → Connect to Git.
-2. Pick this repo.
-3. Build settings: Framework preset **None**, build command **(leave empty)**, build output directory **`public`**.
-4. Save and Deploy. Every push to `main` redeploys automatically.
+The repo is connected to a Cloudflare Worker named `sunwayrobotics-site`. `wrangler.jsonc` tells it to serve `public/` as static files.
+Every push to `main` redeploys automatically. Live at https://sunwayrobotics-site.ccyk25.workers.dev
